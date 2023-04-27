@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="css/estiloMovil.css">
     <title>Version Movil</title>
     </head>
-    <body>
-        <div class="formulario">
+    <body class="GRP1-body">
+        <script src="js/funciones.inc.js"></script>
+        <div class="GRP1-formulario">
             <img src="img/logo.png" width="200px" alt="LogoCentro">
             <h2>Registro.</h2>
             <input type="text" name="correo" id="correoElectronico" placeholder="Correo Electrónico">
-            <input type="text" name="contrasenya" id="contrasenya" placeholder="Contraseña">
-            <input type="button" value="Iniciar Sesión">
+            <div class="GRP1-contrasenya">
+                <input type="password" name="contrasenya" id="contrasenya" placeholder="Contraseña">
+                <input type="checkbox" onclick="mostrarContrasenya()">
+            </div>
+            <input type="button" name="iniciarSesion" value="Iniciar Sesión">
             <hr>
-            <input type="button" value="Crear Cuenta">
-            <input type="button" value="Ver Aspirantes">
+            <input type="button" name="crearCuenta" value="Crear Cuenta">
+            <input type="button" name="verAspirantes" value="Ver Aspirantes">
         </div>
-        <footer>
+        <footer id="GRP1-footer">
             <img src="img/logo.png" width="60px" alt="LogoCentro">
             <span>ContrataMe</span>
         </footer>
