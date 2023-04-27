@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +8,31 @@
     <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
     <title>Página inicio</title>
 </head>
-<body>
-            <header>
-                <nav>
-                    <img src="img/logo.png" height="60px" alt="logo_CIFP">
-                    <h2>ContrataMe</h2>
-                </nav>
-            </header>
-            <div  class="contenedor-foto">
-                <img src="animado.gif" width="950px" height="850px" alt="gif">
-                <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.304/build/spline-viewer.js"></script>
-                <spline-viewer url="https://prod.spline.design/qnsa6Qt0IrvbKd-1/scene.splinecode"></spline-viewer> -->
-            </div>
-            <div class="contenedor-formulario">
-                <h2>Registro.</h2>
-                    <form method="post" action="#">
-                        Introducir Gmail: <input  class="input-texto" type="text" name="" id="" >
-                        Introducir contrseña: <input class="input-texto" type="password" name="" id="" >
-                        <input class="input-botones" type="button" value="Iniciar sesión">
-                        <hr/>
-                        <input class="input-botones" type="button" value="Crear cuenta">
-                        <input class="input-botones" type="button" value="Ver aspirantes">
-                    </form>
-            </div>
-                
-                <footer>
-                </footer>
-        
-    
+<body id="GRP1-root">
+    <header id="GRP1-header">
+        <nav id="GRP1-nav-bar">
+            <img src="img/logo.png" height="60px" alt="logo_CIFP">
+            <h2>ContrataMe</h2>
+        </nav>
+    </header>
+    <main id="GRP1-main">
+        <div class="GRP1-contenedor-foto">
+            <img src="./img/LogoCIFP.gif" width="750px" height="800px" alt="gif">
+        </div>
+        <div class="GRP1-contenedor-formulario">
+            <h2 class="GRP1-titles">Registro.</h2>
+            <form method="post" action="#" id="GRP1-formulario-login">
+                Introducir Gmail: <input class="GRP1-input GRP1-texto" type="text" />
+                Introducir contrseña: <input class="GRP1-input GRP1-texto" type="password" />
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Iniciar sesión">
+                <hr />
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Crear cuenta">
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Ver aspirantes">
+            </form>
+        </div>
+    </main>
+    <footer id="GRP1-footer">
+        <p>Copyright &copy; 2023 by CIFP</p>
+    </footer>
 </body>
 </html>
