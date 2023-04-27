@@ -5,6 +5,7 @@
     font-family: 'Poppins',sans-serif;
 }
 
+
 :root {
     --Amarillo: #EFBC0C;
     --Verde: #2C8221;
@@ -24,7 +25,7 @@
     background-color: var(--Gris-claro);
     /* Fondo #EFEFEF */
     background-image: url(../img/version_4.gif);
-    background-size: 500%;
+    background-size: 400%;
     background-repeat: no-repeat;
     background-position: bottom;
 }
@@ -44,6 +45,10 @@
     padding-bottom: 20px;
     text-align: center;
     font-size: xx-large;
+}
+
+.GRP1-formulario>input[type="text"]:hover::placeholder{
+    color: var(--Blanco);
 }
 
 .GRP1-formulario>input{
@@ -68,6 +73,17 @@
     text-align: center;
     border-radius: 10px;
     border-style: none;
+}
+
+.GRP1-contrasenya:hover>input{
+    transition: 0.5S ;
+    background-color: var(--Gris-oscuro);
+    color: var(--Blanco);
+    cursor: text;
+}
+
+.GRP1-contrasenya:hover>input::placeholder{
+    color: var(--Blanco)
 }
 
 .GRP1-formulario>input[type=button]{
