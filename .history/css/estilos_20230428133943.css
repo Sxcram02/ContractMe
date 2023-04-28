@@ -64,10 +64,8 @@
 
 .GRP1-contenedor-foto {
     width:60%;
-    height: 90%;
-    background-image: url("../img/LogoCIFP.gif");
-    background-size: cover;
-    background-position: center;
+    height: 80%;
+    background-image: url("./img/LogoCIFP.gif");
     /* display: flex;
     flex-direction: column;
     align-items: center; */
