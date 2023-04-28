@@ -1,30 +1,67 @@
+<?php
+
+?>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="es_es">
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estiloMovil.css">
-    <title>Version Movil</title>
-    </head>
-    <body class="GRP1-body">
-        <script src="js/funciones.inc.js"></script>
-        <div class="GRP1-formulario">
-            <img src="img/logo.png" width="200px" alt="LogoCentro">
-            <h2>Registro.</h2>
-            <input type="text" name="correo" id="correoElectronico" placeholder="Correo Electrónico">
-            <div class="GRP1-contrasenya">
-                <input type="password" name="contrasenya" id="contrasenya" placeholder="Contraseña">
-                <input type="checkbox" onclick="mostrarContrasenya()">
-            </div>
-            <input type="button" name="iniciarSesion" value="Iniciar Sesión">
-            <hr>
-            <input type="button" name="crearCuenta" value="Crear Cuenta">
-            <input type="button" name="verAspirantes" value="Ver Aspirantes">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <title>Página inicio</title>
+</head>
+
+<body id="GRP1-root">
+    <header id="GRP1-header">
+
+        <nav id="GRP1-nav-bar">
+            <img src="img/logo.png" height="60px" alt="logo_CIFP">
+
+            <h2>ContrataMe</h2>
+        </nav>
+
+    </header>
+    <main id="GRP1-main">
+        <div class="GRP1-contenedor-foto"></div>
+
+        <div class="GRP1-contenedor-formulario">
+
+            <script src="js/funciones.inc.js"></script>
+
+            <img src="./img/version_3.gif" width="150px" height="125px" alt="LogoCentro" id="logoCIFP">
+
+            <h2 class="GRP1-titles">Registro</h2>
+
+            <form method="post" action="#" id="GRP1-formulario-login">
+
+                <span>Introducir Gmail:</span><input class="GRP1-input GRP1-texto" type="text" />
+
+                <span>Introducir contraseña: </span>
+
+                <input type="password" name="contrasenya" class="GRP1-input GRP1-input-texto GRP1-texto"
+                    id="contrasenya">
+
+                <div class="GRP1-box-passwordd">
+                    <input type="checkbox" onclick="mostrarContrasenya()" class="GRP1-checkbox">
+
+                    <span>Mostrar constraseña</span>
+                </div>
+
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Iniciar sesión" />
+
+                <hr />
+
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Crear cuenta" />
+
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Ver aspirantes" />
+            </form>
         </div>
-        <footer id="GRP1-footer">
-            <img src="img/logo.png" width="60px" alt="LogoCentro">
-            <span>ContrataMe</span>
-        </footer>
-    </body>
+    </main>
+    <footer id="GRP1-footer">
+        <p>Copyright &copy; 2023 by CIFP</p>
+    </footer>
+</body>
+
 </html>
