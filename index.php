@@ -1,19 +1,32 @@
 <?php
-    include_once("./obj/clases.inc.php");
-    include("./function/funciones.inc.php");
+    include("./public/obj/clases.inc.php");
+    include("./public/function/funciones.inc.php");
+    $newFile = "../public/pages/homeUser.php";
+    new Database("localhost","root","mdv21.389863","contractMe",$mySQLObject);
+    
     
     $valueOption = $_POST['option'];
-    $newFile = "../pages/homeUser.php";
-    $mySQLObject = new Database("localhost","root","mdv21.389863","contractMe");
+    
+    $userEmailLogin = $_POST['email'];
+    
+    $userPassLogin = $_POST['contrasenya'];
+    
 
     if(isset($valueOption)){
-        match($valueOption){
-            "Iniciar Sesión" => ($mySQLObject -> getUser()) ? {
-                setHome($newFile);
-            } : {
-                echo "registrate" && $mySQLObject-> setUser($_POST['nombre'],$_POST['apellido'],$_POST['contrasenya'],$_POST['email'],$_POST['movil']);
-            },
-            "Crear cuenta" => $mySQLObject-> setUser($_POST['nombre'],$_POST['apellido'],$_POST['contrasenya'],$_POST['email'],$_POST['movil']),"Ver aspirantes" => $mySQLObject-> setQuery()};
+        switch($valueOption){
+            case "Iniciar Sesión":
+                $allowEntry = $mySQLObject -> hasUser($userEmailLogin,$userPassLogin);
+                if($allowEntry){
+                    setHome($newFile);
+                }
+                break;
+            case "Crear cuenta":
+                $mySQLObject-> setUser($_POST['nombre'],$_POST['apellido'],$_POST['contrasenya'],$email,$_POST['movil']);
+                break;
+            case "Ver aspirantes":
+                $mySQLObject-> getQuery();
+                break;
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -52,7 +65,7 @@
             <form method="post" action="#" id="GRP1-formulario-login">
 
                 <span>Introducir Gmail:</span>
-                <input class="GRP1-input GRP1-texto" type="text" />
+                <input class="GRP1-input GRP1-texto" type="text" name="email" />
 
                 <span>Introducir contraseña: </span>
 
@@ -69,9 +82,11 @@
 
                 <hr />
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Crear cuenta" name="option" />
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Crear cuenta" name="option"
+                    disabled />
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Ver aspirantes" name="option" />
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Ver aspirantes" name="option"
+                    disabled />
             </form>
         </div>
     </main>
