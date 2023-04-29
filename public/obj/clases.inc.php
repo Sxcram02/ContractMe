@@ -9,7 +9,7 @@ class Database {
     public string $username; 
     public string $database;    
     public string $passwordd;
-    private $objNewMysql = new mysqli($host,$username,$passwordd,$database);
+    public  object $objNewMysql;
         
     /**
      * __construct
@@ -18,15 +18,15 @@ class Database {
      * @param  string $username
      * @param  string $passwordd
      * @param  string $database
-     * @return object $objNewMysql
+     * @return void
      */
     
-    public function __construct($host,$username,$passwordd,$database,&$objNewMysql){
+    public function __construct($host,$username,$passwordd,$database){
         $this -> host = $host;
         $this -> username = $username;
         $this -> database = $database;
         $this -> passwordd = $passwordd;
-        $this -> objNewMysql = $objNewMysql;
+        $this -> objNewMysql = new mysqli($host,$username,$passwordd,$database);
     }
     
     /**
@@ -39,22 +39,21 @@ class Database {
     
     public function hasUser (string $userEmail,string $pasword) :bool {
         if (func_get_args()){
-            $controlPass = "SELECT usr.contrasena as contrasena FROM users usr WHERE usr.email = $userEmail";
-            $userLoginPass = "SELECT usr.contrasena as contrasena FROM users usr WHERE usr.contrasena = $pasword;";
+            $controlPass = "SELECT asp.contrasena as contrasena FROM aspirante asp JOIN users usr ON asp.idAspirante = usr.aspirante WHERE usr.email = '$userEmail'";
             
             $databaseConnection = $this -> objNewMysql;
             $getDatabasePass = $databaseConnection -> query($controlPass);
-            $getUserPass = $databaseConnection -> query($userLoginPass);
 
-            $databasePass = mysqli_fetch_array($getDatabasePass,MYSQLI_ASYNC);
-            $userPass = mysqli_fetch_array($getUserPass,MYSQLI_ASYNC);
+            $databasePass = mysqli_fetch_array($getDatabasePass);
+            $databasePass = $databasePass['contrasena'];
 
-            if($databasePass == $userPass){
+            if($databasePass == $pasword){
                 return true;
             } else {
                 return false;
             } 
         }
+        return false;
     }
     
     /**
@@ -71,7 +70,7 @@ class Database {
         if(func_get_args() > 2){
             $databaseConnection = $this -> objNewMysql;
             while (mysqli_affected_rows($databaseConnection) == 0) {
-                $queryINSERT = "INSERT INTO user (userName, contrasena, email, telefono) VALUES ('$clientName', '$clientPass', '$clientEmail', '$clientPhone');";
+                $queryINSERT = "INSERT INTO users (userName, email, telefono) VALUES ('$clientName', '$clientEmail', '$clientPhone');";
                 $doQueryInsert = $databaseConnection -> query($queryINSERT);
             }
         }
@@ -84,7 +83,7 @@ class Database {
      */
     
     public function getQuery (){
-        $simpleQuery2 = "SELECT asp.nameAsiparnt as nameClient FROM aspirantes asp";
+        $simpleQuery2 = "SELECT asp.nameAspirante as nameClient FROM aspirante asp";
 
         $databaseConnection = $this -> objNewMysql;
         

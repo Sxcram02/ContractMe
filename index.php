@@ -1,31 +1,20 @@
 <?php
     include("./public/obj/clases.inc.php");
     include("./public/function/funciones.inc.php");
-    $newFile = "../public/pages/homeUser.php";
-    new Database("localhost","root","mdv21.389863","contractMe",$mySQLObject);
     
-    
-    $valueOption = $_POST['option'];
+    error_reporting(E_ERROR | E_PARSE);
+    $valueOption = $_POST["option"];
     
     $userEmailLogin = $_POST['email'];
     
     $userPassLogin = $_POST['contrasenya'];
     
-
-    if(isset($valueOption)){
-        switch($valueOption){
-            case "Iniciar Sesión":
-                $allowEntry = $mySQLObject -> hasUser($userEmailLogin,$userPassLogin);
-                if($allowEntry){
-                    setHome($newFile);
-                }
-                break;
-            case "Crear cuenta":
-                $mySQLObject-> setUser($_POST['nombre'],$_POST['apellido'],$_POST['contrasenya'],$email,$_POST['movil']);
-                break;
-            case "Ver aspirantes":
-                $mySQLObject-> getQuery();
-                break;
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        
+        if($userEmailLogin and $userPassLogin and isset($_POST['option'])) {
+            
+                $valueOption = $_POST['option'];
+                getPage($valueOption, $userEmailLogin,$userPassLogin);
         }
     }
 ?>
@@ -56,7 +45,7 @@
 
         <div class="GRP1-contenedor-formulario">
 
-            <script src="js/funciones.inc.js"></script>
+            <script src="./public/js/funciones.inc.js"></script>
 
             <img src="./img/logo.png" alt="LogoCentro" id="GRP1-logoCIFP">
 
@@ -65,12 +54,13 @@
             <form method="post" action="#" id="GRP1-formulario-login">
 
                 <span>Introducir Gmail:</span>
-                <input class="GRP1-input GRP1-texto" type="text" name="email" />
+                <input class="GRP1-input GRP1-texto" type="text" name="email" id="email"
+                    value="<?php $userEmailLogin ?>" />
 
                 <span>Introducir contraseña: </span>
 
                 <input type="password" name="contrasenya" class="GRP1-input GRP1-input-texto GRP1-texto"
-                    id="contrasenya" />
+                    id="contrasenya" value="<?php $userPassLogin ?>" />
 
                 <div class="GRP1-box-passwordd">
                     <input type="checkbox" onclick="mostrarContrasenya()" class="GRP1-checkbox">
@@ -78,14 +68,14 @@
                     <span>Mostrar constraseña</span>
                 </div>
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Iniciar sesión" name="option" />
+                <input class="GRP1-input GRP1-input-botones" type="submit" value="Iniciar Sesión" name="option" />
 
                 <hr />
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Crear cuenta" name="option"
+                <input class="GRP1-input GRP1-input-botones" type="submit" value="Crear cuenta" name="option2"
                     disabled />
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Ver aspirantes" name="option"
+                <input class="GRP1-input GRP1-input-botones" type="submit" value="Ver aspirantes" name="option3"
                     disabled />
             </form>
         </div>
