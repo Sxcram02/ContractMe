@@ -79,12 +79,19 @@
 }
 
 .GRP1-contenedor-formulario {
-    width:50%;
+    width: 50%;
+    max-height: 80%;
     margin: 1%;
+    padding: 2%;
     display:flex; 
     align-items:center; 
     flex-direction:column;
     background-color:var(--Blanco);
+}
+
+#GRP1-logoCIFP {
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .GRP1-titles {
@@ -100,22 +107,22 @@
     display: flex;
     flex-direction: column;
     max-width: 70%;
-    height: max-content;
     font-size: 18px;
     text-align: center;
 }
 
 .GRP1-input {
-    margin-bottom: 40px;
+    max-width: 100%;
+    margin: 1%;
     text-align: center;
     font-weight: 500;
-    
+    font-size: 12pt;
+    padding: 1%;
 }
 
 .GRP1-texto {
     border-left: hidden;
     border-right: hidden;
-    font-size: 20px;
 }
 
 .GRP1-texto:hover {

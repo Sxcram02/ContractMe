@@ -1,5 +1,20 @@
 <?php
+    include_once("./obj/clases.inc.php");
+    include("./function/funciones.inc.php");
+    
+    $valueOption = $_POST['option'];
+    $newFile = "../pages/homeUser.php";
+    $mySQLObject = new Database("localhost","root","mdv21.389863","contractMe");
 
+    if(isset($valueOption)){
+        match($valueOption){
+            "Iniciar Sesión" => ($mySQLObject -> getUser()) ? {
+                setHome($newFile);
+            } : {
+                echo "registrate" && $mySQLObject-> setUser($_POST['nombre'],$_POST['apellido'],$_POST['contrasenya'],$_POST['email'],$_POST['movil']);
+            },
+            "Crear cuenta" => $mySQLObject-> setUser($_POST['nombre'],$_POST['apellido'],$_POST['contrasenya'],$_POST['email'],$_POST['movil']),"Ver aspirantes" => $mySQLObject-> setQuery()};
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es_es">
@@ -30,18 +45,19 @@
 
             <script src="js/funciones.inc.js"></script>
 
-            <img src="./img/version_3.gif" width="150px" height="125px" alt="LogoCentro" id="logoCIFP">
+            <img src="./img/logo.png" alt="LogoCentro" id="GRP1-logoCIFP">
 
             <h2 class="GRP1-titles">Registro</h2>
 
             <form method="post" action="#" id="GRP1-formulario-login">
 
-                <span>Introducir Gmail:</span><input class="GRP1-input GRP1-texto" type="text" />
+                <span>Introducir Gmail:</span>
+                <input class="GRP1-input GRP1-texto" type="text" />
 
                 <span>Introducir contraseña: </span>
 
                 <input type="password" name="contrasenya" class="GRP1-input GRP1-input-texto GRP1-texto"
-                    id="contrasenya">
+                    id="contrasenya" />
 
                 <div class="GRP1-box-passwordd">
                     <input type="checkbox" onclick="mostrarContrasenya()" class="GRP1-checkbox">
@@ -49,13 +65,13 @@
                     <span>Mostrar constraseña</span>
                 </div>
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Iniciar sesión" />
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Iniciar sesión" name="option" />
 
                 <hr />
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Crear cuenta" />
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Crear cuenta" name="option" />
 
-                <input class="GRP1-input GRP1-input-botones" type="button" value="Ver aspirantes" />
+                <input class="GRP1-input GRP1-input-botones" type="button" value="Ver aspirantes" name="option" />
             </form>
         </div>
     </main>
