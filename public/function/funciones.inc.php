@@ -1,16 +1,4 @@
 <?php
-    /**
-    * setHome
-    *
-    * @param string $newFile
-    * @return $newPage
-    */
-    function setHome($newFile){
-        if(func_get_args()){
-            $newPage = readfile($newFile);
-            return $newPage;
-        }
-    }
     
     /**
      * getPage
