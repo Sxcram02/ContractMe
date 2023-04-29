@@ -16,6 +16,11 @@
     src: url("../fonts/Poppins-Black.ttf");
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url("../fonts/Poppins-Light.ttf");
+}
+
 :root {
     --Amarillo: #EFBC0C;
     --Verde: #2C8221;
@@ -85,6 +90,7 @@
 .GRP1-titles {
     margin-bottom: 2%;
     font-size: 35px;
+    font-weight: bolder;
 }
 
 #GRP1-formulario-login {
@@ -93,13 +99,17 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-width: 70%;
+    max-width: 70%;
     height: max-content;
     font-size: 18px;
+    text-align: center;
 }
 
 .GRP1-input {
     margin-bottom: 40px;
+    text-align: center;
+    font-weight: 500;
+    
 }
 
 .GRP1-texto {
@@ -141,7 +151,7 @@
     border-style: solid;
     border-width: 1px;
     color: var(--Negro);
-    width: 100%s;
+    width: 100%;
 }
 
 #GRP1-footer {
@@ -160,7 +170,7 @@
     padding: 1%;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:850px) {
 
     #GRP1-main {
         flex-direction: row;
