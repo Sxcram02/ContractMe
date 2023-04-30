@@ -130,10 +130,6 @@
     cursor: pointer; 
 }
 
-#GRP1-error {
-    background-color: red;
-}
-
 .GRP1-input-botones {
     padding-top: 10px;
     padding-bottom: 10px;
