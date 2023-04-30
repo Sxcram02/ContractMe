@@ -9,7 +9,7 @@
     
     $userPassLogin = $_POST['contrasenya'];
     
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if($userEmailLogin and $userPassLogin and isset($_POST['option'])) {
             
@@ -60,7 +60,7 @@
                 <span>Introducir contraseña: </span>
 
                 <input type="password" name="contrasenya" class="GRP1-input GRP1-input-texto GRP1-texto"
-                    id="contrasenya" value="<?php $userPassLogin ?>" />
+                    id="<?php $class ?>" value="<?php $userPassLogin ?>" />
 
                 <div class="GRP1-box-passwordd">
                     <input type="checkbox" onclick="mostrarContrasenya()" class="GRP1-checkbox">
