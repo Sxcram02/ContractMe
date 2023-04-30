@@ -17,7 +17,7 @@
             case "Iniciar Sesión":
                 $allowEntry = $mySqlObject -> hasUser($userEmailLogin,$userPassLogin);
                 if($allowEntry){
-                    header("Location: /homeUser.php");
+                    header("Location: /public/src/index.html");
                 } else {
                     echo error_log("Error %d");
                 }

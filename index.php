@@ -53,7 +53,7 @@
 
             <form method="post" action="#" id="GRP1-formulario-login">
 
-                <span>Introducir Gmail:</span>
+                <span>Introducir Gmail o nombre de usuario:</span>
                 <input class="GRP1-input GRP1-texto" type="text" name="email" id="email"
                     value="<?php $userEmailLogin ?>" />
 

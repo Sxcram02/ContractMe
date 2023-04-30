@@ -39,7 +39,7 @@ class Database {
     
     public function hasUser (string $userEmail,string $pasword) :bool {
         if (func_get_args()){
-            $controlPass = "SELECT asp.contrasena as contrasena FROM aspirante asp JOIN users usr ON asp.idAspirante = usr.aspirante WHERE usr.email = '$userEmail'";
+            $controlPass = "SELECT asp.contrasena as contrasena FROM aspirante asp JOIN users usr ON asp.idAspirante = usr.aspirante WHERE usr.email = '$userEmail' OR usr.userName = '$userEmail'";
             
             $databaseConnection = $this -> objNewMysql;
             $getDatabasePass = $databaseConnection -> query($controlPass);
