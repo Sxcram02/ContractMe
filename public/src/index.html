@@ -8,151 +8,148 @@
     <title>Document</title>
 </head>
 <body>
-        <header>
-            <img src="./img/logo.png" alt="Logo cifpCeuta">
-            <h1>Contratame</h1>
-        </header>
-        <main>
-            <section>
-                <article>
+    <header>
+        <img src="./img/logo.png" alt="Logo cifpCeuta">
+        <h1>Contratame</h1>
+    </header>
+    <main>
+        <section>
+            <article>
                 <h1>Crea tu cuenta</h1>
                 <h2>Datos Personales</h2>
-                <form>
-                    <input type="text" name="NombreUsuario" placeholder="Nombre">
-                    <div><input type="text" name="PrimerApellidoUsuario" placeholder="Primer Apellido"></div>
-                    <div><input type="text" name="SegundoApellidoUsuario" placeholder="Segundo Apellido"></div>
-                    <label for="Fecha">Fecha de nacimiento:</label>
-                    <div>
-                        <input id="Fecha" type="date" name="Fechadenacimiento" placeholder="Fecha">
-                        <select  name="GradosSuperiores">
-                                <option value="">Selecciona una opción</option>
-                                <option value="informatica">Informática</option>
-                                <option value="marketing">Marketing</option>
-                                <option value="finanzas">Finanzas</option>
-                                <option value="administracion">Administración</option>
-            
-                        </select>
+                
+                <input type="text" name="NombreUsuario" placeholder="Nombre">
+                
+                <div>
+                    <input type="text" name="PrimerApellidoUsuario" placeholder="Primer Apellido">
+                </div>
+
+                <div>
+                    <input type="text" name="SegundoApellidoUsuario" placeholder="Segundo Apellido">
+                </div>
+
+                <label for="Fecha">Fecha de nacimiento:</label>
+                <div>
+                    <input id="Fecha" type="date" name="Fechadenacimiento" placeholder="Fecha">
+
+                    <select name="GradosSuperiores">
+                        <option value="">Selecciona una opción</option>
+                        <option value="informatica">Informática</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="finanzas">Finanzas</option>
+                        <option value="administracion">Administración</option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <input type="text" id="correo" name="correoElectronico" placeholder="Correo">
+                </div>
+
+                <div>
+                    <input type="text" id="contraseña" name="contraseñaCorreo" placeholder="Contraseña">
+                </div>
+
+                <div>
+                    <input type="text" id="repetir" name="repetirContraseña" placeholder="Repetir Contraseña">
+                </div>
+
+                <div>
+                    <input type="number" id="codigo" name="codigoPostal" placeholder="CP">
+                    <input type="number" id="telefono" name="Telefono" placeholder="Teléfono">
+                </div>
+
+                <div>
+                    <input type="text" id="direccion" name="direccionUsuario" placeholder="Dirección">
+                </div>
+
+            </article>
+        </section>
+        <section>
+            <article>
+
+                <h2>Experiencia profesional</h2>
+
+                <div id="contenedorExperiencia">
+
+                    <div class="contenedorInputs">
+                        <input type="date" id="fecha" name="fechaInicioExperiencia" placeholder="2019">
+                        <input type="date" id="fecha" name="fechaFinalExperiencia" placeholder="2019">
+                        <input type="text" id="descripcion" name="descripcionExperiencia" placeholder="Descripción">
                     </div>
-                    <div><input type="text" id="correo" name="correoElectronico" placeholder="Correo"></div>
-                    <div><input type="text" id="contraseña" name="contraseñaCorreo" placeholder="Contraseña"></div>   
-                    <div><input type="text" id="repetir" name="repetirContraseña" placeholder="Repetir Contraseña"></div>
-                    <div>
-                        <input type="number" id="codigo" name="codigoPostal" placeholder="CP">
-                        <input type="number" id="telefono" name="Telefono" placeholder="Teléfono">
-                    </div>
-                    <div><input type="text" id="direccion" name="direccionUsuario" placeholder="Dirección"></div>
-                    <h2>Experiencia profesional</h2>
-                    <div id="contenedorExperiencia">
-                        <div class="contenedorInputs">
-                            <input type="date" id="fecha" name="fechaInicioExperiencia" placeholder="2019">  
-                            <input type="date" id="fecha" name="fechaFinalExperiencia" placeholder="2019">  
-                            <input type="text" id="descripcion" name="descripcionExperiencia" placeholder="Descripción">
-                        </div>
-                    </div>
-                    <div class="botones">
-                        <button type="button" id="agregarExperiencia">+</button>
-                        <button type="button" id="quitarExperiencia">-</button>
-                    </div>
-                    <h2>Formación académica</h2>
-                    <div id="contenedorFormacion">
+
+                </div>
+
+                <div class="botones">
+                    <button type="button" id="agregarExperiencia">+</button>
+                    <button type="button" id="quitarExperiencia">-</button>
+                </div>
+
+            </article>
+            <article>
+                
+                <h2>Formación académica</h2>
+
+                <div id="contenedorFormacion">
+
                     <div class="contenedorInputs">
                         <input type="number" name="anioInicioFormacion" placeholder="Año inicio" min="1900">
                         <input type="number" name="anioFinalFormacion" placeholder="Año fin" min="1900">
                         <input type="text" name="cursoAutoformacion" placeholder="Curso autoformación">
                     </div>
-                    </div>
-                    <div class="botones">
-                        <button type="button" id="agregarFormacion">+</button>
-                        <button type="button" id="quitarFormacion">-</button>
-                    </div>
-                    <h2>Idiomas</h2>
-                    <div id="contenedorIdiomas">
+
+                </div>
+
+
+                <div class="botones">
+                    <button type="button" id="agregarFormacion">+</button>
+                    <button type="button" id="quitarFormacion">-</button>
+                </div>
+
+                <h2>Idiomas</h2>
+
+                <div id="contenedorIdiomas">
+
                     <div class="contenedorInputs">
+
                         <input type="text" name="idioma" placeholder="Idioma">
+
                         <select name="nivelIdioma">
-                        <option value="A1">A1</option>
-                        <option value="A2">A2</option>
-                        <option value="B1">B1</option>
-                        <option value="B2">B2</option>
-                        <option value="C1">C1</option>
-                        <option value="C2">C2</option>
+                            <option value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                            <option value="C1">C1</option>
+                            <option value="C2">C2</option>
                         </select>
+
                     </div>
-                    </div>
-                    <div class="botones">
-                        <button type="button" id="agregarIdioma">+</button>
-                        <button type="button" id="quitarIdioma">-</button>
-                    </div>
-                    <div class="sobreMi">
-                        <h2>Sobre mí</h2>
-                        <textarea name="sobreMi" cols="50" rows="10"></textarea>
-                    </div>
-                    <div class="enviar">
-                        <input type="submit" value="Enviar">
-                    </div>
-                    
-                </form>
-                <script>
-                    const botonAgregarFormacion = document.getElementById("agregarFormacion");
-                    const contenedorFormacion = document.getElementById("contenedorFormacion");
+
+                </div>
+
+            </article>
+            <article>
                 
-                    botonAgregarFormacion.addEventListener("click", () => {
-                        const nuevoContenedor = contenedorFormacion.firstElementChild.cloneNode(true);
-                        nuevoContenedor.querySelector("input[name='anioInicioFormacion']").value = "";
-                        nuevoContenedor.querySelector("input[name='anioFinalFormacion']").value = "";
-                        nuevoContenedor.querySelector("input[name='cursoAutoformacion']").value = "";
-                        contenedorFormacion.appendChild(nuevoContenedor);
-                    });
-                
-                    const botonQuitarFormacion = document.getElementById("quitarFormacion");
-                
-                    botonQuitarFormacion.addEventListener("click", () => {
-                        const contenedoresFormacion = document.querySelectorAll("#contenedorFormacion .contenedorInputs");
-                        if(contenedoresFormacion.length > 1){
-                            contenedoresFormacion[contenedoresFormacion.length-1].remove();
-                        }
-                    });
-                    const botonAgregarExperiencia = document.getElementById("agregarExperiencia");
-                    const contenedorExperiencia = document.getElementById("contenedorExperiencia");
-                
-                    botonAgregarExperiencia.addEventListener("click", () => {
-                        const nuevoContenedor = contenedorExperiencia.firstElementChild.cloneNode(true);
-                        nuevoContenedor.querySelector("input[name='fechaInicioExperiencia']").value = "";
-                        nuevoContenedor.querySelector("input[name='fechaFinalExperiencia']").value = "";
-                        nuevoContenedor.querySelector("input[name='descripcionExperiencia']").value = "";
-                        contenedorExperiencia.appendChild(nuevoContenedor);
-                    });
-                    const botonQuitarExperiencia = document.getElementById("quitarExperiencia");
-                
-                    botonQuitarExperiencia.addEventListener("click", () => {
-                    const contenedoresExperiencia = document.querySelectorAll("#contenedorExperiencia .contenedorInputs");
-                    if(contenedoresExperiencia.length > 1){
-                        contenedoresExperiencia[contenedoresExperiencia.length-1].remove();
-                    }
-                });
-                
-                    const botonAgregarIdioma = document.getElementById("agregarIdioma");
-                    const contenedorIdiomas = document.getElementById("contenedorIdiomas");
-                
-                    botonAgregarIdioma.addEventListener("click", () => {
-                        const nuevoContenedor = contenedorIdiomas.firstElementChild.cloneNode(true);
-                        nuevoContenedor.querySelector("input[name='idioma']").value = "";
-                        nuevoContenedor.querySelector("select[name='nivelIdioma']").selectedIndex = 0;
-                        contenedorIdiomas.appendChild(nuevoContenedor);
-                    });
-                
-                    const botonQuitarIdioma = document.getElementById("quitarIdioma");
-                
-                    botonQuitarIdioma.addEventListener("click", () => {
-                        const contenedoresIdiomas = document.querySelectorAll("#contenedorIdiomas .contenedorInputs");
-                        if(contenedoresIdiomas.length > 1){
-                            contenedoresIdiomas[contenedoresIdiomas.length-1].remove();
-                        }
-                    });
-                
-                </script>  
-                </article>
-            </section>
-        </main>
+                <div class="botones">
+
+                    <button type="button" id="agregarIdioma">+</button>
+                    <button type="button" id="quitarIdioma">-</button>
+
+                </div>
+
+                <div class="sobreMi">
+                    <h2>Sobre mí</h2>
+                    <textarea name="sobreMi" cols="50" rows="10"></textarea>
+                </div>
+
+                <div class="enviar">
+                    <input type="submit" value="Enviar">
+                </div>
+
+            </article>
+            </form>
+            <script src="../js/funciones.inc.js"></script>
+        </section>
+    </main>
 </body>
 </html>
