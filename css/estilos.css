@@ -106,7 +106,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    max-width: 70%;
+    width: 100%;
     font-size: 18px;
     text-align: center;
 }
@@ -123,6 +123,7 @@
 .GRP1-texto {
     border-left: hidden;
     border-right: hidden;
+    transition: 0.6s;
 }
 
 .GRP1-texto:hover {
