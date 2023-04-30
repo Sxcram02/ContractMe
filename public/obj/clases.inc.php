@@ -90,7 +90,6 @@ class Database {
         $getAspirants = $databaseConnection -> query($simpleQuery2);
         $resultQuery = mysqli_fetch_array($getAspirants);
         foreach ($resultQuery as $aspirante){
-            $aspirante = $aspirante['aspirante'];
             return "{$aspirante['nameClient']}";
         }
     }

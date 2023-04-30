@@ -60,7 +60,7 @@
                 <span>Introducir contraseña: </span>
 
                 <input type="password" name="contrasenya" class="GRP1-input GRP1-input-texto GRP1-texto"
-                    id="<?php $class ?>" value="<?php $userPassLogin ?>" />
+                    id="contrasenya" value="<?php $userPassLogin ?>" />
 
                 <div class="GRP1-box-passwordd">
                     <input type="checkbox" onclick="mostrarContrasenya()" class="GRP1-checkbox">
