@@ -42,10 +42,7 @@
                 <?php 
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         
-                        $userListData = $_POST['NombreUsuario'];
-                        $userFirstName = $_POST['PrimerApellidoUsuario'];
-                        $email = $_POST['correoElectronico'];
-                        $telefonoMovil = $_POST['Telefono'];
+                        $userListData =array($_POST['NombreUsuario'],$_POST['PrimerApellidoUsuario'],$_POST['correoElectronico'],$_POST['Telefono'];
 
                         
                         

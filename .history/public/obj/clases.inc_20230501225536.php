@@ -66,18 +66,27 @@ class Database {
      * @return void
      */
     
-    public function setUser (string $clientName, string $clientUserName, string $clientEmail, string $clientPhone) {
-        if(func_get_args() > 2){
-            $databaseConnection = $this -> objNewMysql;
-            while (mysqli_affected_rows($databaseConnection) == 0) {
-                $userId = rand(3,1000);
-                $queryINSERT = "INSERT INTO users (userId,userName,email) VALUES ('$userId','$clientName', '$clientEmail');";
-                $doQueryInsert2 = $databaseConnection -> query($queryINSERT);
+    public function setUser (array $userListData) {
+        $databaseConnection = $this -> objNewMysql;
+        for($intineration=0;$intineration<=func_get_args();$intineration++){
+            if(isset($userListData[$intineration])){
+                $querySetUserData = "INSERT INTO users (userId,userName,userAp1,email) VALUES ('$userListData[$intineration]');";
+                $query = $databaseConnection -> query($querySetUserData);
+                (mysqli_affected_rows($databaseConnection))?return true:return false;
             }
-            echo "<h1>Registro Correcto</h1>";
-        }else{
-            echo "Introduce los campos obligatorios";
         }
+        // $inputPrameter=func_get_args();
+        // if(isset($inputPrameter) > 2){
+        //     $databaseConnection = $this -> objNewMysql;
+        //     while (mysqli_affected_rows($databaseConnection) == 0) {
+        //         $userId = rand(3,1000);
+        //         $queryINSERT = "INSERT INTO users (userId,userName,email) VALUES ('$userId','$clientName', '$clientEmail');";
+        //         $doQueryInsert2 = $databaseConnection -> query($queryINSERT);
+        //     }
+        //     echo "<h1>Registro Correcto</h1>";
+        // }else{
+        //     echo "Introduce los campos obligatorios";
+        // }
     }
         
     /**

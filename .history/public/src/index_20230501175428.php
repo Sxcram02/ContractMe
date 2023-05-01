@@ -42,12 +42,10 @@
                 <?php 
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         
-                        $userListData = $_POST['NombreUsuario'];
+                        $userName = $_POST['NombreUsuario'];
                         $userFirstName = $_POST['PrimerApellidoUsuario'];
                         $email = $_POST['correoElectronico'];
                         $telefonoMovil = $_POST['Telefono'];
-
-                        
                         
                         $mySqlObject = new Database("localhost","root","mdv21.389863","contractMe");
                         

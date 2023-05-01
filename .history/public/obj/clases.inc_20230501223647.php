@@ -76,7 +76,7 @@ class Database {
             }
             echo "<h1>Registro Correcto</h1>";
         }else{
-            echo "Introduce los campos obligatorios";
+        echo "Introduce los campos obligatorios";
         }
     }
         

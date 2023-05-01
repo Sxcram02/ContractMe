@@ -67,7 +67,8 @@ class Database {
      */
     
     public function setUser (string $clientName, string $clientUserName, string $clientEmail, string $clientPhone) {
-        if(func_get_args() > 2){
+        $input
+        if(isset(func_get_args()) > 2){
             $databaseConnection = $this -> objNewMysql;
             while (mysqli_affected_rows($databaseConnection) == 0) {
                 $userId = rand(3,1000);

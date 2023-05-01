@@ -75,9 +75,8 @@ class Database {
                 $doQueryInsert2 = $databaseConnection -> query($queryINSERT);
             }
             echo "<h1>Registro Correcto</h1>";
-        }else{
-            echo "Introduce los campos obligatorios";
-        }
+        }else
+        echo "Introduce los campos obligatorios";
     }
         
     /**
