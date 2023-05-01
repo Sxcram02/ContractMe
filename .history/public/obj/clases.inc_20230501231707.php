@@ -67,16 +67,16 @@ class Database {
      */
     
     public function setUser (string $clientName, string $clientUserName, string $clientEmail, string $clientPhone) {
-        if(func_num_args() > 2){
+        if(func_get_args() > 2){
             $databaseConnection = $this -> objNewMysql;
             while (mysqli_affected_rows($databaseConnection) == 0) {
                 $userId = rand(3,1000);
                 $queryINSERT = "INSERT INTO users (userId,userName,email) VALUES ('$userId','$clientName', '$clientEmail');";
                 $doQueryInsert2 = $databaseConnection -> query($queryINSERT);
             }
-            echo "<h1 style='width:300px; background-color:snow; box-shadow: 0px 0px 6px black; color:lightgreen;'>Registro Correcto</h1>";
+            echo "<h 1>Registro Correcto</h>";
         }else{
-            echo "<h1 style='width:300px; background-color:snow; box-shadow: 0px 0px 6px black; color:darkred;'>Introduce los campos obligatorios</h1>";
+            echo "Introduce los campos obligatorios";
         }
     }
         

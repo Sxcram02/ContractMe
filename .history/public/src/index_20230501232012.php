@@ -51,7 +51,7 @@
                         
                         $mySqlObject = new Database("localhost","root","mdv21.389863","contractMe");
                         
-                        $mySqlObject -> setUser($userName,$userFirstName,$email,$telefonoMovil);
+                        $mySqlObject -> setUser($userFirstName,$email,$telefonoMovil);
                     }
                 ?>
                 <section class="GRP4-section" id="GRP4-section1">

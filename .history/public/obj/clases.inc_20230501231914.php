@@ -76,7 +76,7 @@ class Database {
             }
             echo "<h1 style='width:300px; background-color:snow; box-shadow: 0px 0px 6px black; color:lightgreen;'>Registro Correcto</h1>";
         }else{
-            echo "<h1 style='width:300px; background-color:snow; box-shadow: 0px 0px 6px black; color:darkred;'>Introduce los campos obligatorios</h1>";
+            echo "Introduce los campos obligatorios";
         }
     }
         
