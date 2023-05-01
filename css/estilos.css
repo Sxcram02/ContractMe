@@ -1,14 +1,14 @@
 * {
     margin:0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
 }
 
 @font-face {
     font-family: 'Poppins';
     src: url("../fonts/Poppins-Regular.ttf");
+    font-weight: normal;
 }
 
 @font-face {
@@ -31,10 +31,19 @@
     --Blanco: #FFFFFF;
 }
 
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------GRUPO 1 CSS--------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
 #GRP1-root {
     width:100vw;
     height:100vh; 
     background-color: var(--Gris-claro);
+    overflow: hidden;
 }
 
 #GRP1-header {
@@ -211,4 +220,197 @@
         z-index: 1;
         background-color: rgba(72, 72, 72, 0.533);
     }
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------GRUPO 4 CSS--------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP4-header {
+    width:  100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+#GRP4-header img {
+    height: 70px;
+    width: 70px;
+}
+
+#GRP4-header h1 {
+    display: inline;
+    padding: 1%;
+    font-size: 30px;
+}
+
+#GRP4-root {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    background-image: url("/img/LogoCIFP.gif");
+    background-size: cover;
+    background-position: cover;
+}
+
+#GRP4-main {
+    background-color: #efefef84;
+    width: 100%;
+    height: 100%;
+}
+
+#GRP4-box-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.GRP4-section {
+    width: 50%;
+    height: 100%;
+    padding: 1%;
+}
+
+#GRP4-section1 {
+    width: 100%;
+    max-height: 50%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+#GRP4-formulario-signIn {
+    width: 50%;
+    height: 100%;
+}
+
+.GRP4-articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+#GRP4-articleName {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#GRP4-articleDate {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#GRP4-articleUser {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#GRP4-articleHome {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#GRP4-section2 {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#GRP4-section2 input[type="text"],#GRP4-section2 input[type="date"],#GRP4-section2 input[type="number"],#GRP4-section2  select {
+    width: 100px;
+}
+
+#GRP4-experiencie {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0;
+}
+
+#GRP4-education {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#GRP4-idioms {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+#GRP4-aboutMe {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.GRP4-titles {
+    font-size: 40pt;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.GRP4-subtitle {
+    text-decoration: underline;
+    width: 350px;
+    height: 50px;
+    margin: 1%;
+}
+
+#GRP4-label {
+    font-weight: bolder;
+}
+
+.GRP4-inputs {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.GRP4-inputNumber {
+    width: 150px;
+}
+
+#direccion {
+    width: 400px;
+}
+
+.GRP4-botones {
+    display: flex;
+    align-items: center;
+}
+
+.GRP4-button {
+    margin: 3%;
+}
+
+.GRP4-agregarOpcion, .GRP4-quitarOpcion {
+    width: 45px;
+    height: 45px;
+    border-radius: 30%;
+    border: none;
+    color: white;
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.GRP4-agregarOpcion, #GRP4-sent {
+    background-color: #2C8221;
+}
+
+.GRP4-quitarOpcion {
+    background-color: #DC3545;
+}
+
+#GRP4-sent {
+    width: 150px;
+    padding: 20px;
 }
