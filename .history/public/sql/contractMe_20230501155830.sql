@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS telefono (
 CREATE TABLE IF NOT EXISTS aspirante (
     idAspirante INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nameAspirante VARCHAR(45) NOT NULL,
-    contrasena VARCHAR(100) NULL
+    contrasena VARCHAR(100) NOT NULL
 ) ENGINE = INNODB;
 -- ---------------------------------
 -- Table users

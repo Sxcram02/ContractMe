@@ -1,8 +1,6 @@
 <?php
     session_start();
-
     include("./../obj/clases.inc.php");
-    
     if(!isset($_SESSION['user'])){
         header("Location: /index.php");
         exit();
@@ -45,6 +43,7 @@
                         $userName = $_POST['NombreUsuario'];
                         $userFirstName = $_POST['PrimerApellidoUsuario'];
                         $email = $_POST['correoElectronico'];
+                        
                         $telefonoMovil = $_POST['Telefono'];
                         
                         $mySqlObject = new Database("localhost","root","mdv21.389863","contractMe");

@@ -70,8 +70,8 @@ class Database {
         if(func_get_args() > 2){
             $databaseConnection = $this -> objNewMysql;
             while (mysqli_affected_rows($databaseConnection) == 0) {
-                $userId = rand(3,1000);
-                $queryINSERT = "INSERT INTO users (userId,userName,email) VALUES ('$userId','$clientName', '$clientEmail');";
+                $queryINSERT = "INSERT INTO users (userName, userAp1, email, telefono) VALUES ('$clientName', '$clientUserName', '$clientEmail', '$clientPhone');";
+                $doQueryInsert1 = $databaseConnection -> query("INSERT INTO telefono (tlfMovil) VALUES ('$clientPhone');)
                 $doQueryInsert2 = $databaseConnection -> query($queryINSERT);
             }
             echo "<h1>Registro Correcto</h1>";

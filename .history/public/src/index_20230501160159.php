@@ -1,8 +1,6 @@
 <?php
     session_start();
-
     include("./../obj/clases.inc.php");
-    
     if(!isset($_SESSION['user'])){
         header("Location: /index.php");
         exit();

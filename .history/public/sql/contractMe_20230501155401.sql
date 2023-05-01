@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS telefono (
 CREATE TABLE IF NOT EXISTS aspirante (
     idAspirante INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nameAspirante VARCHAR(45) NOT NULL,
-    contrasena VARCHAR(100) NULL
+    contrasena VARCHAR(100) NOT NULL
 ) ENGINE = INNODB;
 -- ---------------------------------
 -- Table users
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TRIGGER actualizacion_users
 AFTER INSERT ON users
 FOR EACH ROW
-INSERT INTO contractMe.aspirante (idAspirante, nameAspirante) VALUES (NEW.userId, NEW.userName);
+INSERT INTO contractMe.aspirante (idAspirante, nameAspirante) SELECT usr.userId, usr.userName FROM users usr;
 
 START TRANSACTION;
     INSERT INTO telefono (tlfMovil) VALUES ("+34642363013");

@@ -317,7 +317,8 @@
 
 #GRP4-section2 {
     height: 100%;
-    overflow: scroll;
+    max-height: auto;
+    overflow-y: scroll;
     padding: 20%;
     display: flex;
     flex-direction: column;

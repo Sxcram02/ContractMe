@@ -316,7 +316,7 @@
 }
 
 #GRP4-section2 {
-    height: 100%;
+    height: auto;
     overflow: scroll;
     padding: 20%;
     display: flex;
