@@ -17,7 +17,9 @@
             case "Iniciar Sesión":
                 $allowEntry = $mySqlObject -> hasUser($userEmailLogin,$userPassLogin);
                 if($allowEntry){
-                    header("Location: /public/src/index.html");
+                    // session_start();
+                    // $_SESSION['loggedIn'] = true;
+                    header("Location: /public/src/index.php");
                 } else {
                     echo error_log("Error %d");
                 }
