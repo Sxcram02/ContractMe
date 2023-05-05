@@ -43,7 +43,7 @@
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         
                         $userId = rand(10,10000);
-                        $userDataList = array($_POST['NombreUsuario'],$_POST['PrimerApellidoUsuario'],$_POST['SegundoApellidoUsuario'],$_POST['FechaNacimiento'],$_POST['correoElectronico'],$_POST['contrasenya']);
+                        $userDataList = array($_POST['NombreUsuario'],$_POST['PrimerApellidoUsuario'],$_POST['SegundoApellidoUsuario'],$fec$_POST['correoElectronico']);
 
                         echo $lista = "'".implode("','",$userDataList)."'";                
                         

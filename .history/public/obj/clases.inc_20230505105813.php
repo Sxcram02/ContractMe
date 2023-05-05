@@ -69,7 +69,7 @@ class Database {
     public function setUser (string $userListData) :bool {
         $tester = false;
         if(func_num_args()==1){
-            $userId = rand(1,10000);
+            
             $databaseConnection = $this -> objNewMysql;
             $queryInsert = "INSERT INTO users (userId,userName,userAp1,email) VALUES ($userId,$userListData);";
             $resultaQuery = $databaseConnection  -> query($queryInsert);
