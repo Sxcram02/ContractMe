@@ -1,6 +1,6 @@
 <?php
-$lifeTime=1800;
-session_set_cookie_params($lifeTime);
+$lifeTime=1800
+session_set_cookie_params()
     session_start();
     
     include("./public/obj/clases.inc.php");
