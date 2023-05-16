@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS filtroDireccion (
 -- Table filtroAficiones
 -- --------------------------------------
 DROP TABLE IF EXISTS filtroAficcion;
-CREATE TABLE IF NOT EXISTS filtroAficcion (
+CREATE TABLE IF NOT EXISTS filtroAficciones (
     aficciones INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
 

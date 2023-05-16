@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS aptitudes (
 -- --------------------------------------
 -- Table idiomas
 -- --------------------------------------
-DROP TABLE IF EXISTS idiomas;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS idiomas (
     idIdiomas INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     idioma ENUM("En","Al","Sp","Fr","It","Jp","Ar"),
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS idiomas (
 -- --------------------------------------
 -- Table direccion
 -- --------------------------------------
-DROP TABLE IF EXISTS direccion;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS direccion (
     idDireccion INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     codPostal CHAR(5) NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS direccion (
 -- --------------------------------------
 -- Table aficciones
 -- --------------------------------------
-DROP TABLE IF EXISTS aficciones;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS aficciones (
     idAficcion INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombreAficcion VARCHAR(70) NOT NULL,
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS aficciones (
 -- -------------------------------------
 -- Table curriculum
 -- -------------------------------------
-DROP TABLE IF EXISTS curriculum;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS curriculum (
     codCurriculum INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     email VARCHAR(100) NOT NULL,
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS curriculum (
 -- --------------------------------------
 -- Table filtroEstudios
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroEstudios;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS filtroEstudios (
     estudios INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS filtroEstudios (
 -- --------------------------------------
 -- Table filtroExperiencia
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroExperiencia;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS filtroExperiencia (
     experiencia INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS filtroExperiencia (
 -- --------------------------------------
 -- Table filtroAptitudes
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroAptitudes;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS filtroAptitudes (
     aptitudes INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS filtroAptitudes (
 -- --------------------------------------
 -- Table filtroIdiomas
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroIdiomas;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS filtroIdiomas (
     idiomas INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS filtroIdiomas (
 -- --------------------------------------
 -- Table filtroDireccion
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroDireccion;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS filtroDireccion (
     direccion INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -246,8 +246,8 @@ CREATE TABLE IF NOT EXISTS filtroDireccion (
 -- --------------------------------------
 -- Table filtroAficiones
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroAficcion;
-CREATE TABLE IF NOT EXISTS filtroAficcion (
+DROP TABLE IF EXISTS 
+CREATE TABLE IF NOT EXISTS filtroAficciones (
     aficciones INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
 

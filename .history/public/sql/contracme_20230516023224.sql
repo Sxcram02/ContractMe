@@ -13,7 +13,7 @@ USE contractme;
 -- --------------------------------------
 -- Table usuario
 -- --------------------------------------
-DROP TABLE IF EXISTS usuario;
+
 CREATE TABLE IF NOT EXISTS usuario  (
     email VARCHAR(100) PRIMARY KEY NOT NULL,
     nombreUser VARCHAR(50) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS usuario  (
 -- --------------------------------------
 -- Table telefono
 -- --------------------------------------
-DROP TABLE IF EXISTS telefono;
+
 CREATE TABLE IF NOT EXISTS telefono  (
     numTlfMovil CHAR(13) PRIMARY KEY NOT NULL,
     numTlfTrabajo CHAR(13) NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS telefono  (
 -- --------------------------------------
 -- Table empresa
 -- --------------------------------------
-DROP TABLE IF EXISTS empresa;
+
 CREATE TABLE IF NOT EXISTS empresa (
     codEmpresa INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombreEmpresa VARCHAR(100) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS empresa (
 -- --------------------------------------
 -- Table empresario
 -- --------------------------------------
-DROP TABLE IF EXISTS empresario;
+
 CREATE TABLE IF NOT EXISTS empresario (
     email VARCHAR(100) PRIMARY KEY NOT NULL,
     codEmpresa INT NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS empresario (
 -- --------------------------------------
 -- Table expediente
 -- --------------------------------------
-DROP TABLE IF EXISTS expediente;
+
 CREATE TABLE IF NOT EXISTS expediente (
     codExpediente MEDIUMINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     informe BLOB NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS expediente (
 -- --------------------------------------
 -- Table aspirante
 -- --------------------------------------
-DROP TABLE IF EXISTS aspirante;
+
 CREATE TABLE IF NOT EXISTS aspirante (
     email VARCHAR(100) PRIMARY KEY NOT NULL,
     fechaNac DATE NOT NULL,
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS aspirante (
 -- --------------------------------------
 -- Table estudios
 -- --------------------------------------
-DROP TABLE IF EXISTS estudios;
+
 CREATE TABLE IF NOT EXISTS estudios (
     idTitulo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     centro VARCHAR(100) NOT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS estudios (
 -- --------------------------------------
 -- Table experiencia
 -- --------------------------------------
-DROP TABLE IF EXISTS experiencia;
+
 CREATE TABLE IF NOT EXISTS experiencia (
     idExperiencia INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     empresa VARCHAR(60) NOT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS experiencia (
 -- --------------------------------------
 -- Table aptitudes
 -- --------------------------------------
-DROP TABLE IF EXISTS aptitudes;
+
 CREATE TABLE IF NOT EXISTS aptitudes (
     idAptitud INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombreAptitud VARCHAR(70) NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS aptitudes (
 -- --------------------------------------
 -- Table idiomas
 -- --------------------------------------
-DROP TABLE IF EXISTS idiomas;
+
 CREATE TABLE IF NOT EXISTS idiomas (
     idIdiomas INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     idioma ENUM("En","Al","Sp","Fr","It","Jp","Ar"),
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS idiomas (
 -- --------------------------------------
 -- Table direccion
 -- --------------------------------------
-DROP TABLE IF EXISTS direccion;
+
 CREATE TABLE IF NOT EXISTS direccion (
     idDireccion INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     codPostal CHAR(5) NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS direccion (
 -- --------------------------------------
 -- Table aficciones
 -- --------------------------------------
-DROP TABLE IF EXISTS aficciones;
+
 CREATE TABLE IF NOT EXISTS aficciones (
     idAficcion INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombreAficcion VARCHAR(70) NOT NULL,
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS aficciones (
 -- -------------------------------------
 -- Table curriculum
 -- -------------------------------------
-DROP TABLE IF EXISTS curriculum;
+
 CREATE TABLE IF NOT EXISTS curriculum (
     codCurriculum INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     email VARCHAR(100) NOT NULL,
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS curriculum (
 -- --------------------------------------
 -- Table filtroEstudios
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroEstudios;
+
 CREATE TABLE IF NOT EXISTS filtroEstudios (
     estudios INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS filtroEstudios (
 -- --------------------------------------
 -- Table filtroExperiencia
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroExperiencia;
+
 CREATE TABLE IF NOT EXISTS filtroExperiencia (
     experiencia INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS filtroExperiencia (
 -- --------------------------------------
 -- Table filtroAptitudes
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroAptitudes;
+
 CREATE TABLE IF NOT EXISTS filtroAptitudes (
     aptitudes INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS filtroAptitudes (
 -- --------------------------------------
 -- Table filtroIdiomas
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroIdiomas;
+
 CREATE TABLE IF NOT EXISTS filtroIdiomas (
     idiomas INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS filtroIdiomas (
 -- --------------------------------------
 -- Table filtroDireccion
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroDireccion;
+
 CREATE TABLE IF NOT EXISTS filtroDireccion (
     direccion INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -246,15 +246,15 @@ CREATE TABLE IF NOT EXISTS filtroDireccion (
 -- --------------------------------------
 -- Table filtroAficiones
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroAficcion;
-CREATE TABLE IF NOT EXISTS filtroAficcion (
+
+CREATE TABLE IF NOT EXISTS filtroAficciones (
     aficciones INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
 
     PRIMARY KEY(aficciones, curriculum),
     INDEX(aficciones, curriculum),
 
-    FOREIGN KEY (aficciones) REFERENCES aficciones(idAficcion) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (aficciones) REFERENCES aficciones(idAficciones) ON UPDATE CASCADE ON DELETE CASCADE,
 
     FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE RESTRICT ON DELETE RESTRICT
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4;

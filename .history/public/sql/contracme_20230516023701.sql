@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS filtroIdiomas (
 -- --------------------------------------
 -- Table filtroDireccion
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroDireccion;
+DROP TABLE IF EXISTS 
 CREATE TABLE IF NOT EXISTS filtroDireccion (
     direccion INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
@@ -246,8 +246,8 @@ CREATE TABLE IF NOT EXISTS filtroDireccion (
 -- --------------------------------------
 -- Table filtroAficiones
 -- --------------------------------------
-DROP TABLE IF EXISTS filtroAficcion;
-CREATE TABLE IF NOT EXISTS filtroAficcion (
+DROP TABLE IF EXISTS 
+CREATE TABLE IF NOT EXISTS filtroAficciones (
     aficciones INT NOT NULL AUTO_INCREMENT,
     curriculum INT NOT NULL,
 
