@@ -1,34 +1,21 @@
 <?php
 class Usuario {
     protected string $email;
-    private object $objeNewMysql;
+    protected object $objNewMysql;
 
+    use databaseConexion;
     public function __construct(){
-        $options = [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_PERSISTENT => false];
-
-        try {
-
-            $objNewMysql = new PDO(DB_HOST,DB_USER,DB_PASS,$options);
-            $this -> objeNewMysql = $objNewMysql;
-
-        } catch (PDOException $error) {
-            echo "Error de conexión: ".$error -> getMessage();
-        }
-    }
-
-    function conexion(){
-
+        $objNewMysql = databaseConexion::conexion();
+        $this -> objNewMysql = $objNewMysql;
     }
 
     public function getSelectUser(array &$userRowsData){
-        
-        $pdo = $this -> objeNewMysql;
+        $pdo = $this -> objNewMysql;
+
         $query = "SELECT * FROM usuario usr;";
         $prepareSelectQuery = $pdo -> query($query);
         $userRowsData=array();
+
         foreach ($prepareSelectQuery as $value){
             $userRowsData[]=$value;
         }
@@ -37,13 +24,14 @@ class Usuario {
 
     public function setInsertUser($email,$contrasenia) :bool{
 
-        $pdo = $this -> objeNewMysql;
+        $pdo = $this -> objNewMysql;
         $prepareQuery = $pdo -> prepare("INSERT INTO usuario VALUES (:usuario,:nameUser,:surname,null,:contrasenia)");
     
         $prepareQuery -> bindValue(":contrasenia",$contrasenia);
         $prepareQuery -> bindValue(":usuario",$email);
         $prepareQuery -> bindValue(":nameUser","marcos");
         $prepareQuery -> bindValue(":surname","dominguez");
+
         $prepareQuery -> execute();
 
         if($prepareQuery){
@@ -56,39 +44,26 @@ class Usuario {
 
 
 
-class Aspirantes extends Usuario {
+class Aspirante extends Usuario {
     private string $emailAspirante, $dni;
     private int $codExpediente;
 
     public string $fechaNac, $familia, $grado;
+    private object $objectDB;
 
-    public function __construct($dni,$fechaNac,$familia,$grado){
-        $emailAspirante = $this -> email;
-        $this -> emailAspirante = $emailAspirante;
-        $this -> dni = $dni;
-        $this -> fechaNac = $fechaNac;
-        $this -> familia = $familia;
-        $this -> grado = $grado;
+    public function __construct($emailAspirante){
+        $pdo = databaseConexion::conexion();
+        $this -> objectDB = $pdo;
+        $this -> email = $emailAspirante;
     }
 
-    public function getEmailAspirante(){
-        return $this -> emailAspirante;
-    }
-
-    public function getDniAspirante(){
-        return $this -> dni;
-    }
-
-    public function getFechaNacAspirante(){
-        return $this -> fechaNac;
-    }
-
-    public function getFamiliaAspirante(){
-        return $this -> familia;
-    }
-
-    public function getGradoAspirante(){
-        return $this -> grado;
+    public function getSelectAspirante($email,$pass){
+        $pdo= $this -> objectDB;
+        $preparePDO= $pdo -> prepare("SELECT asp.email as email, asp.contrasenia as pass FROM aspirante asp WHERE email = :email AND pass = :email");
+        $preparePDO -> bindValue(":email",$email);
+        $preparePDO -> bindValue(":pass",$pass);
+        
+        return $preparePDO -> execute();
     }
 }
 

@@ -11,11 +11,11 @@ class Controller {
     }
 
     public static function newuser(){
-        require_once("src/views/formulario.php");
+        require_once("src/views/formularioSignIn.php");
     }
 
     public static function guardar(){
-        $email=$_REQUEST['user'];
+        $email=$_REQUEST['email'];
         $pass=$_REQUEST['pass'];
 
         $usuario = new Usuario();
@@ -23,6 +23,17 @@ class Controller {
         header("Location:".main);
     }
 
-    public static function editar(){}
+    public static function mostrarhomeAspirante(){
+        $email = $_REQUEST['email'];
+        $pass= $_REQUEST['pass'];
+
+        $usuario = new Aspirante($email);
+
+        if($usuario -> getSelectAspirante($email,$pass)){
+            require_once("src/views/homeAspirante.php");
+        }else {
+            header("Location:".main);
+        }
+    }
 }
 ?>

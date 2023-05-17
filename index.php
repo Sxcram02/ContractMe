@@ -1,5 +1,6 @@
 <?php
         require_once("config.inc.php");
+        require_once("src/model/filter.php");
         require_once("public/controller/controller.inc.php");
 
         if (isset($_GET['accion'])){
