@@ -33,13 +33,13 @@ class Controller {
         $pass = $_REQUEST['pass'];
 
         $usuario = new Aspirante();
-        $dbFilas= $usuario -> getSelectAspirante("admin@admin.com","123456");
+        $dbFilas= $usuario -> getSelectAspirante($email,$pass);
 
         if($email = $dbFilas){
             require_once("src/views/homeAspirante.php");
             echo var_dump($dbFilas);
         }else{
-            header("Loaction:".main);
+            header("Location:".main);
         }
     }
 
