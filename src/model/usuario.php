@@ -61,7 +61,18 @@ class Aspirante extends Usuario {
         $preparePDO= $pdo -> prepare("SELECT asp.email as email FROM aspirante asp JOIN usuario usr ON usr.email = asp.email WHERE usr.email = :email AND usr.contrasenia = :pass");
         $preparePDO -> bindValue(":email",$emailAsp);
         $preparePDO -> bindValue(":pass",$passAsp);
-        return $preparePDO -> execute();
+
+        
+        $preparePDO -> execute();
+        $queryResult= $preparePDO -> fetchAll(PDO::FETCH_ASSOC);
+
+        $valueQuery=array();
+
+        foreach($queryResult as $value){
+            $valueQuery[]=$value;
+        }
+        
+        return $valueQuery;
     }
 
     public function setInsertAspirante($email,$pass){

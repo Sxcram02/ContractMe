@@ -12,7 +12,7 @@ require_once("src/views/layouts/container.php");
                 <span>CONSTRASEÑA:</span>
                 <input type="password" name="pass" id="" placeholder="Introduce la contraseña">
             </form>
-            <a href="/index.php?accion=mostrarhomeAspirante"><button>iniciar</button></a>
+            <button><a href="/index.php?accion=mostrarhomeAspirante">iniciar</a></button>
         </div>
     </article>
 </section>

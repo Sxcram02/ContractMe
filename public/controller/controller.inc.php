@@ -30,15 +30,21 @@ class Controller {
 
     public static function mostrarhomeAspirante(){
         $email = $_REQUEST['email'];
-        $pass= $_REQUEST['pass'];
+        $pass = $_REQUEST['pass'];
 
         $usuario = new Aspirante();
+        $dbFilas= $usuario -> getSelectAspirante("admin@admin.com","123456");
 
-        if($usuario -> getSelectAspirante($email,$pass)){
+        if($email = $dbFilas){
             require_once("src/views/homeAspirante.php");
-        }else {
-            require_once("src/views/formularioSignIn.php");
+            echo var_dump($dbFilas);
+        }else{
+            header("Loaction:".main);
         }
+    }
+
+    public static function mostrarRegistroUser(){
+        require_once("src/views/formularioSignIn.php");
     }
 }
 ?>

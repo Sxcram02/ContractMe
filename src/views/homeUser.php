@@ -16,7 +16,7 @@ error_reporting(E_PARSE | E_ERROR);
     <section id="GRP-services">
         <h1>SOMOS DE CONFIANZA</h1>
         <p>Empieza ahora a buscar tus aspirantes o encuentra al empresario perfecto</p>
-        <a href="index.php?accion=getSystemServices">
+        <a href="index.php?accion=mostrarRegistroUser">
             <button>VAMOS A ELLO<i class='bx bx-right-arrow-alt' style='color:#fffefe; font-size: 26px;'></i></button>
         </a>
     </section>
