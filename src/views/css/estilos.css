@@ -2,6 +2,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -38,403 +39,417 @@
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-
-#GRP1-root {
-    width:100vw;
-    height:100vh; 
-    background-color: var(--Gris-claro);
-    overflow: hidden;
-}
-
-#GRP1-header {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    background-color: var(--Blanco);
-    box-shadow: 0px 1px 5px var(--Gris-oscuro);
-    
-}
-
-#GRP1-nav-bar {
-    display: flex;
-    width: 100%;
-    justify-content: left;
-    align-items: center;
-} 
-
-#GRP1-nav-bar img {
-    margin-left: 20px;
-}
-
-#GRP1-nav-bar h2 {
-    margin-left: 40px;
-    color: var(--Negro);
-}
-
-#GRP1-main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.GRP1-contenedor-foto {
-    width:60%;
-    height: 90%;
-    background-image: url("../img/LogoCIFP.gif");
+#GRP-root {
+    background-image: url("./../../../public/img/pattern.jpeg");
     background-size: cover;
-    background-position: center;
 }
 
-.GRP1-contenedor-formulario {
-    width: 50%;
-    max-height: 80%;
-    margin: 1%;
-    padding: 2%;
-    display:flex; 
-    align-items:center; 
-    flex-direction:column;
-    background-color:var(--Blanco);
+.root {
+    width: 100vw;
 }
 
-#GRP1-logoCIFP {
-    max-width: 100px;
-    max-height: 100px;
-}
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- HEADER LAYOUTS ----------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 
-.GRP1-titles {
-    margin-bottom: 2%;
-    font-size: 35px;
-    font-weight: bolder;
-}
 
-#GRP1-formulario-login {
-    font-weight: bold;
-    margin-top: 10%;
-    margin: 0;
+#GRP-header {
+    width: 100vw;
+    height: 5rem;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-size: 18px;
-    text-align: center;
-}
-
-.GRP1-input {
-    max-width: 100%;
-    margin: 1%;
-    text-align: center;
-    font-weight: 500;
-    font-size: 12pt;
-    padding: 1%;
-}
-
-.GRP1-texto {
-    border-left: hidden;
-    border-right: hidden;
-    transition: 0.6s;
-}
-
-.GRP1-texto:hover {
-    background-color: var(--Gris-claro);
-    cursor: pointer; 
-}
-
-.GRP1-input-botones {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    border-radius: 5px;
-    background-color: var(--Azul);
-    color: var(--Blanco);
-    font-size: 20px;
+    justify-content: space-between;
+    background: #efefefc3;
 }
 
-.GRP1-box-passwordd {
-    margin-bottom: 2%;
-    padding: 1%;
-}
-
-.GRP1-input-botones:hover {
-    background-color: var(--Gris-oscuro);
+.GRP-box-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
     cursor: pointer;
 }
 
-.GRP1-formulario-login hr {
-    margin-bottom: 35px;
-    display: block;
-    border-style: solid;
-    border-width: 1px;
-    color: var(--Negro);
+.GRP-box-content-header ul {
     width: 100%;
 }
 
-#GRP1-footer {
-    position: absolute;
+.GRP-box-content-header li {
     text-align: center;
-    box-shadow: 0px 1px 7px var(--Gris-oscuro);
-    width: 100%;
-    height: 6%;
-    background-color: var(--Blanco);
-    bottom: 0%;
+    padding: 2%;
+    margin-left: 2%;
+    text-shadow: 1px 0px 0px #717171;
+    cursor: pointer;
 }
 
-#GRP1-footer p {
+#GRP-navBar  a, a:enabled,a:visited,a:active {
+    width: 150px;
+    height: 35px;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#GRP-navBar  a:hover {
+    transition: 0.6s all;
+    background-color: var(--Negro);
+    color: var(--Blanco);
+    text-shadow: 2px 0px 0px black;
+}
+
+#GRP-firstTitle {
+    width: 50%;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--Azul);
+}
+
+#GRP-firstTitle img {
+    width: 100px;
+    height: 100px;
+    padding: 1%;
+}
+
+#GRP-navBar {
+    width: 50%;
     font-size: 20px;
     font-weight: 700;
-    padding: 1%;
-}
-
-@media screen and (max-width:850px) {
-
-    #GRP1-main {
-        flex-direction: row;
-    }
-
-    #GRP1-formulario-login {
-        margin: 0;
-    }
-
-    .GRP1-titles {
-        margin: 0;
-    }
-
-    .GRP1-contenedor-foto {
-        width: 100%;
-        position: relative;
-        z-index: 0;
-        background-image: url("../img/version_5.gif");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .GRP1-contenedor-formulario {
-        width: 90%;
-        margin: 5%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        position: absolute;
-        z-index: 1;
-        background-color: rgba(72, 72, 72, 0.533);
-    }
 }
 
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
-/* ------------------------------GRUPO 4 CSS--------------------------------- */
+/* ---------------------------- CONTAINER LAYOUTS --------------------------- */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-#GRP4-header {
-    width:  100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-}
-
-#GRP4-header img {
-    height: 70px;
-    width: 70px;
-}
-
-#GRP4-header h1 {
-    display: inline;
-    font-size: 30px;
-}
-
-#GRP4-root {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    text-align: center;
-    background-image: url("/img/LogoCIFP.gif");
-    background-size: cover;
-    background-position: cover;
-}
-
-#GRP4-main {
-    background-color: #efefef84;
+main {
     width: 100%;
-    height: 100%;
-}
-
-#GRP4-box-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.GRP4-section {
-    width: 50%;
-    height: 100%;
-    padding: 1%;
-}
-
-#GRP4-section1 {
-    width: 100%;
-    max-height: 50%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
-}
-
-#GRP4-formulario-signIn {
-    width: 50%;
-    height: 100%;
-}
-
-.GRP4-articles {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-LogIn {
+    height: 100%;
+    width: 50%;
+    background-color: var(--Blanco);
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- FOOTER LAYOUTS ------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP-footer {
+    width: 100%;
+    padding: 1%;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- VIEW HOME USER ------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP-homeUser {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.homeArticle {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------------------------- SECCION 1 ------------------------------ */
+
+#GRP-IntroObjective {
+    font-weight: 600;
+    font-size: 22px;
+    text-align: start;
+    align-items: flex-start;
     padding: 2%;
 }
 
-#GRP4-articleName {
-    grid-column: 1/2;
-    grid-row: 1/2;
+#GRP-IntroObjective h1 {
+    font-size: 50px;
+    text-shadow: 2px 0px 0px var(--Gris-oscuro);
 }
 
-#GRP4-articleDate {
-    grid-column: 1/2;
-    grid-row: 2/3;
+#GRP-IntroObjective h3 {
+    font-size: 18px;
+    color: #0A4E92;
+    padding: 3%;
 }
 
-#GRP4-articleUser {
-    grid-column: 2/3;
-    grid-row: 1/2;
+#GRP-logo3DModel img {
+    width: 100%;
 }
 
-#GRP4-articleHome {
-    grid-column: 2/3;
-    grid-row: 2/3;
+/* ---------------------------- SECCION 2 ------------------------------ */
+
+#GRP-services {
+    width: 100%;
+    height: 10%;
+    padding: 4%;
+    background-color: #0A4E92;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--Blanco);
 }
 
-#GRP4-section2 {
+#GRP-services h1 {
+    font-size: 30px;
+    text-shadow: 2px 0px 0px var(--Negro);
+}
+
+#GRP-services button {
+    width: 225px;
+    padding: 7%;
+    border-radius: 20px;
+    border: none;
+    background-color: #167de3;
+    color: var(--Blanco);
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#GRP-services button:hover {
+    transition: 0.5s all;
+    background-color: #094076;
+}
+
+/* ---------------------------- SECCION 3 ------------------------------ */
+
+#GRP-servicesPlaces {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1 1.4fr;
+}
+
+.services {
     height: 100%;
-    overflow: scroll;
-    padding: 20%;
+    color: var(--Blanco);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-#GRP4-section2 input[type="text"],#GRP4-section2 input[type="date"],#GRP4-section2 input[type="number"],#GRP4-section2  select {
-    width: 100px;
+
+.services h2 {
+    text-transform: uppercase;
+    text-shadow: 2px 0px 0px var(--Negro);
 }
 
-#GRP4-experiencie {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    margin: 0;
-}
-
-#GRP4-education {
-    grid-column: 1/2;
-    grid-row: 2/3;
-}
-
-#GRP4-idioms {
-    grid-column: 3/4;
-    grid-row: 1/2;
-}
-
-#GRP4-aboutMe {
-    grid-column: 3/4;
-    grid-row: 2/3;
-}
-
-.GRP4-titles {
-    font-size: 40pt;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.GRP4-subtitle {
-    text-decoration: underline;
-    width: 350px;
-    height: 50px;
-    margin: 1%;
-}
-
-#GRP4-label {
-    font-weight: bolder;
-}
-
-.GRP4-inputs {
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.GRP4-inputNumber {
+.services hr {
     width: 150px;
-}
-
-#direccion {
-    width: 400px;
-}
-
-.GRP4-botones {
-    display: flex;
-    align-items: center;
-}
-
-.GRP4-button {
-    margin: 3%;
-}
-
-.GRP4-agregarOpcion, .GRP4-quitarOpcion {
-    width: 45px;
-    height: 45px;
-    border-radius: 30%;
+    height: 2px;
     border: none;
-    color: white;
-    font-size: 15pt;
-    font-weight: bold;
+    background: var(--Negro);
+}
+
+.services button {
+    width: 250px;
+    padding: 1%;
+    text-transform: uppercase;
+    color: var(--Blanco);
+    text-shadow: 0px 0px 2px var(--Blanco);
+    background: none;
+    border: 2px solid var(--Blanco);
+    font-size: 22px;
+    font-weight: 800;
+    border-radius: 20px;
     cursor: pointer;
 }
 
-.GRP4-agregarOpcion {
-    cursor: pointer;
-    background-color: #2C8221;
+.services button:hover {
+    transition: 0.6s all;
+    background-color: var(--Blanco);
+    color: var(--Negro);
 }
 
-.GRP4-agregarOpcion:hover {
-    transition: all 0.3s;
-    background-color: #2c822178;
+
+.services:hover .box-service1 {
+    transition: 0.6s linear;
+    background-color: #efbe0cc3;
 }
 
-.GRP4-quitarOpcion {
-    cursor: pointer;
-    background-color: #DC3545;
+.box-service1 {
+    width: 100%;
+    background-color: #efbe0c94;
+}
+.service1{
+    grid-row:1/2;
+    grid-column: 1/2;
+    background-image: url("./../../img/service1.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
-.GRP4-quitarOpcion:hover {
-    transition: all 0.3s;
-    background-color: #fc00197b;
+
+
+.services:hover .box-service2 {
+    transition: 0.6s linear;
+    background-color: #37cf22ac;
 }
 
-.GRP4-box-enviar {
+.box-service2 {
+    width: 100%;
+    background-color: #2c822186;
+}
+.service2{
+    grid-row:1/2;
+    grid-column: 2/3;
+    background-image: url("./../../img/service2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.services:hover .box-service3 {
+    transition: 0.6s linear;
+    background-color: #167ce3bf;
+}
+
+.box-service3{
+    width: 100%;
+    background-color: #167ce38c;
+}
+
+.service3{
+    grid-row:1/2;
+    grid-column: 3/4;
+    background-image: url("./../../img/service3.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------VIEW LOG IN -------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP-formLogIn {
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.GRP4-sent {
-    width: 100px;
+.target-LogIn {
+    width: 50%;
+    height: 60%;
+    border-radius: 10px;
+    background-image: url("./../../img/patternTarget.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box-content-target {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.target-LogIn h1 {
+    font-size: 50px;
+    font-weight: 800;
+    text-shadow: 0px 0px 2px var(--Blanco);
+}
+
+.target-LogIn form span {
+    text-shadow: 1px 0px 0px var(--Gris-oscuro);
+    font-weight: 800;
+}
+
+.target-LogIn form {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.target-LogIn form input {
+    width: 450px;
+    height: 50px;
+    border: 1px solid var(--Negro);
+    background-color: var(--Blanco);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--Gris-oscuro);
+    font-weight: 800;
+}
+
+.target-LogIn form input:hover {
+    background-color: var(--Gris-claro);
+    color: var(--Negro);
+}
+
+.target-LogIn button {
+    width: 250px;
+    height: 50px;
     padding: 1%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 0px 0px var(--Blanco);
+    border: none;
+    box-shadow: 0px 0px 2px var(--Negro);
+    background-color: var(--Gris-claro);
     cursor: pointer;
 }
 
-.GRP4-sent:hover {
-    transition: all 0.4s;
-    background-color: #f97008d6;
+.target-LogIn button:hover {
+    transition: 0.3s linear;
+    background-color: var(--Gris-oscuro);
+    color: var(--Blanco);
+    text-shadow: 0px 0px 2px var(--Blanco);
+    box-shadow: 0px 0px 2px var(--Blanco);
 }
