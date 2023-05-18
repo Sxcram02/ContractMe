@@ -4,10 +4,15 @@ class Controller {
     public function __construct(){}
 
     public static function mostrarhomeUser(){
+        require_once("src/views/homeUser.php");
+    }
+
+
+    public static function mostrarFormLogIn(){
         $usuario = new Usuario();
         $dataUser = array();
         $usuario -> getSelectUser($dataUser);
-        require_once("src/views/homeUser.php");
+        require_once("src/views/formularioLogIn.php");
     }
 
     public static function newuser(){
@@ -27,12 +32,12 @@ class Controller {
         $email = $_REQUEST['email'];
         $pass= $_REQUEST['pass'];
 
-        $usuario = new Aspirante($email);
+        $usuario = new Aspirante();
 
         if($usuario -> getSelectAspirante($email,$pass)){
             require_once("src/views/homeAspirante.php");
         }else {
-            header("Location:".main);
+            require_once("src/views/formularioSignIn.php");
         }
     }
 }

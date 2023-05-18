@@ -1,11 +1,25 @@
-<header id="GRP1-header">
+    <header id="GRP-header">
+        <div id="GRP-firstTitle" class="GRP-box-content-header">
+            <a href="/index.php?accion=mostrarhomeUser">
+                <img src="/public/img/logo.png" alt="logo_CIFP">
+            </a>
+        </div>
 
-<nav id="GRP1-nav-bar">
-    <img src="img/logo.png" height="60px" alt="logo_CIFP">
-
-    <h2>ContrataMe</h2>
-</nav>
-
-</header>
-<main>
-    <h1>Estas en el contenedor con varias secciones aun no mostradas</h1>
+        <nav id="GRP-navBar">
+            <ul class="GRP-box-content-header">
+                <a href="/index.php?accion=mostrarhomeUser">
+                    <li>Inicio</li>
+                </a>
+                <a href="#GRP-servicesPlaces">
+                    <li>Servicios</li>
+                </a>
+                <a href="/index.php?accion=getHelp">
+                    <li>Asistencia</li>
+                </a>
+                <a href="/index.php?accion=mostrarFormLogIn">
+                    <li>Log in</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>

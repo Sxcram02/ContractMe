@@ -51,19 +51,28 @@ class Aspirante extends Usuario {
     public string $fechaNac, $familia, $grado;
     private object $objectDB;
 
-    public function __construct($emailAspirante){
+    public function __construct(){
         $pdo = databaseConexion::conexion();
         $this -> objectDB = $pdo;
-        $this -> email = $emailAspirante;
     }
 
-    public function getSelectAspirante($email,$pass){
+    public function getSelectAspirante($emailAsp,$passAsp){
         $pdo= $this -> objectDB;
-        $preparePDO= $pdo -> prepare("SELECT asp.email as email, asp.contrasenia as pass FROM aspirante asp WHERE email = :email AND pass = :email");
+        $preparePDO= $pdo -> prepare("SELECT asp.email as email FROM aspirante asp JOIN usuario usr ON usr.email = asp.email WHERE usr.email = :email AND usr.contrasenia = :pass");
+        $preparePDO -> bindValue(":email",$emailAsp);
+        $preparePDO -> bindValue(":pass",$passAsp);
+        return $preparePDO -> execute();
+    }
+
+    public function setInsertAspirante($email,$pass){
+        $pdo = $this -> objectDB;
+        $preparePDO = $pdo -> prepare("INSERT INTO aspirante (SELECT usr.email as email, usr.contrasenia as pass FROM usuario usr WHERE email = :email AND pass = :pass");
+
         $preparePDO -> bindValue(":email",$email);
         $preparePDO -> bindValue(":pass",$pass);
-        
+
         return $preparePDO -> execute();
+        
     }
 }
 

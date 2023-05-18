@@ -7,7 +7,7 @@
         <input type="email" name="email" id="" placeholder="INGRESE EMAIL"></br>
         <input type="password" name="pass" id="" placeholder="INGRESE CONTRASEÑA"></br>
         <input type="submit" value="edit" name="user">
-        <input type="hidden" name="accion" value="guardar">
+        <input type="hidden" name="accion" value="mostrarhomeAspirante">
     </form>
 <?
     require_once("./layouts/footer.php");
