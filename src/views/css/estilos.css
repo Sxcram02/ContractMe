@@ -276,12 +276,6 @@ section {
     text-shadow: 2px 0px 0px var(--Negro);
 }
 
-.services hr {
-    width: 150px;
-    height: 2px;
-    border: none;
-    background: var(--Negro);
-}
 
 .services button {
     width: 250px;
@@ -367,17 +361,18 @@ section {
 #GRP-formLogIn {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    padding: 2%;
+    font-size: 17px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1,1.4fr);
 }
 
 .target-LogIn {
-    width: 50%;
-    height: 60%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 70%;
     border-radius: 10px;
-    background-image: url("./../../img/patternTarget.png");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -389,51 +384,73 @@ section {
 .box-content-target {
     height: 100%;
     width: 100%;
+    padding: 5%;
+    background-color: #dddddd68;
+}
+
+#box-content-target2 {
+    display: none;
+}
+
+#GRP-formLogIn article {
+    width: 100%;
+}
+
+.box-content-target .box-buttons {
+    width: 100%;
     display: flex;
-    border-radius: 10px;
-    flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.target-LogIn h1 {
-    font-size: 50px;
+.box-buttons button {
+    width: 150px;
+    height: 45px;
+    padding: 1%;
+    background-color: var(--Azul);
+    border: none;
+    border-radius: 5px;
+    color:  white;
     font-weight: 800;
-    text-shadow: 0px 0px 2px var(--Blanco);
 }
 
-.target-LogIn form span {
-    text-shadow: 1px 0px 0px var(--Gris-oscuro);
-    font-weight: 800;
+.box-buttons button:hover {
+    transition: 0.3s linear;
+    cursor: pointer;
+    background-color: #053a6e;
 }
 
 .target-LogIn form {
-    height: 50%;
+    width: 100%;
+    height: 100%;
+    padding: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 }
 
-.target-LogIn form input {
-    width: 450px;
-    height: 50px;
+.target-LogIn form input, select {
+    width: 70%;
+    height: 40px;
+    padding: 1%;
     border: 1px solid var(--Negro);
     background-color: var(--Blanco);
     border-radius: 20px;
     text-align: center;
     font-size: 18px;
-    color: var(--Gris-oscuro);
+    color: var(--Negro);
     font-weight: 800;
+    margin-bottom: 3%;
 }
+
 
 .target-LogIn form input:hover {
     background-color: var(--Gris-claro);
     color: var(--Negro);
 }
 
-.target-LogIn button {
-    width: 250px;
+.target-LogIn .sentPostForm {
+    width: 50%;
     height: 50px;
     padding: 1%;
     font-size: 20px;
@@ -446,10 +463,145 @@ section {
     cursor: pointer;
 }
 
-.target-LogIn button:hover {
+.target-LogIn .sentPostForm:hover {
     transition: 0.3s linear;
     background-color: var(--Gris-oscuro);
     color: var(--Blanco);
     text-shadow: 0px 0px 2px var(--Blanco);
     box-shadow: 0px 0px 2px var(--Blanco);
+}
+
+.box-model3D {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.box-model3D img {
+    width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------VIEW ASPIRANTE------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.box-home-aspirante {
+    width: 100vw;
+    height: 100vh;
+    background-color: #05396ead;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1.4fr);
+    color: var(--Blanco);
+    text-shadow: 1px 0px 2px var(--Gris-oscuro);
+    
+}
+
+.container-presentacion-aspiarnte {
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    padding: 1%;
+}
+
+.box-presentacion {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-imagen-perfil {
+    height: 40%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.box-imagen-perfil i {
+    font-size: 50px;
+    color: var(--Blanco);
+}
+
+.box-aspirante-nav-bar {
+    width: 100%;
+    height: 60%;
+}
+
+.aspirante-nav-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: inside;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.aspirante-nav-bar li {
+    width: 250px;
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #efefef96;
+    color: var(--Negro);
+}
+
+.aspirante-nav-bar li i {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.aspirante-nav-bar li:hover {
+    transition: 0.2s all;
+    background:none;
+    border: 1px solid var(--Blanco);
+    text-shadow: 0px 0px 4px var(--Blanco);
+    cursor: pointer;
+    color: var(--Blanco);
+}
+
+.container-servicios-aspirante {
+    height: 100%;
+    grid-column: 2/4;
+    grid-row: 1/3;
+    background-color: #efefefb3;
+    padding: 2%;
+
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -----------------------------VIEW CURRICULUM------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.container-creacion-curriculum {
+    width: 100vw;
+    height: 100vh;
+    padding: 1%;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1.4fr);
+}
+
+.box-inputs {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: justify;
+    flex-direction: column;
+    justify-content: space-around;
 }

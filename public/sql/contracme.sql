@@ -15,11 +15,14 @@ USE contractme;
 -- --------------------------------------
 DROP TABLE IF EXISTS usuario;
 CREATE TABLE IF NOT EXISTS usuario  (
-    email VARCHAR(100) PRIMARY KEY NOT NULL,
+    idUsuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL,
     nombreUser VARCHAR(50) NOT NULL,
+    contrasenia VARCHAR(200) NOT NULL,
     apellido1 VARCHAR(50) NOT NULL,
-    apellido2 VARCHAR(60) NULL,
-    contrasenia VARCHAR(200) NOT NULL
+    apellido2 VARCHAR(60) NULL DEFAULT NULL,
+    tipoUsuario ENUM("aspirante","empresario","docente") NOT NULL
+
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------
@@ -28,26 +31,12 @@ CREATE TABLE IF NOT EXISTS usuario  (
 DROP TABLE IF EXISTS telefono;
 CREATE TABLE IF NOT EXISTS telefono  (
     numTlfMovil CHAR(13) PRIMARY KEY NOT NULL,
-    numTlfTrabajo CHAR(13) NULL,
-    email VARCHAR(100) NOT NULL,
+    numTlfTrabajo CHAR(13) NULL DEFAULT NULL,
+    idUsuario INT NOT NULL,
 
-    INDEX(email),
-    FOREIGN KEY (email) REFERENCES usuario(email) ON UPDATE CASCADE ON DELETE CASCADE
+    INDEX(idUsuario),
+    FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
--- --------------------------------------
--- Table docente
--- --------------------------------------
-DROP TABLE IF EXISTS docente;
-CREATE TABLE IF NOT EXISTS docente (
-    email VARCHAR(100) PRIMARY KEY NOT NULL,
-    nif CHAR(9) NOT NULL UNIQUE,
-    especialidad VARCHAR(50) NOT NULL,
-    curso CHAR(7) NULL,
-    INDEX(email),
-    FOREIGN KEY (email) REFERENCES usuario(email) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
-
-
 -- --------------------------------------
 -- Table empresa
 -- --------------------------------------
@@ -57,18 +46,6 @@ CREATE TABLE IF NOT EXISTS empresa (
     nombreEmpresa VARCHAR(100) NOT NULL,
     provincia VARCHAR(70) NOT NULL,
     sector ENUM("Marketing y Comercio","Informática","Industria","Electronica","AudioVisuales")
-)ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
-
--- --------------------------------------
--- Table empresario
--- --------------------------------------
-DROP TABLE IF EXISTS empresario;
-CREATE TABLE IF NOT EXISTS empresario (
-    email VARCHAR(100) PRIMARY KEY NOT NULL,
-    codEmpresa INT NOT NULL,
-
-    INDEX(codEmpresa),
-    FOREIGN KEY (codEmpresa) REFERENCES empresa(codEmpresa) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------
@@ -82,22 +59,6 @@ CREATE TABLE IF NOT EXISTS expediente (
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------
--- Table aspirante
--- --------------------------------------
-DROP TABLE IF EXISTS aspirante;
-CREATE TABLE IF NOT EXISTS aspirante (
-    email VARCHAR(100) PRIMARY KEY NOT NULL,
-    fechaNac DATE NOT NULL,
-    dni CHAR(9) NOT NULL UNIQUE,
-    familia ENUM("Informática","Administración","Maketing y comercio") NOT NULL,
-    grado ENUM("GB","GM","GS") NOT NULL,
-    expediente MEDIUMINT NOT NULL,
-
-    INDEX(expediente),
-    FOREIGN KEY (expediente) REFERENCES expediente(codExpediente) ON UPDATE RESTRICT ON DELETE RESTRICT
-)ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
-
--- --------------------------------------
 -- Table estudios
 -- --------------------------------------
 DROP TABLE IF EXISTS estudios;
@@ -105,7 +66,7 @@ CREATE TABLE IF NOT EXISTS estudios (
     idTitulo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     centro VARCHAR(100) NOT NULL,
     formacion ENUM("ESO","Bach","U","FP") NOT NULL,
-    familia ENUM("Ciencias","Letras") NULL,
+    familia ENUM("Ciencias","Letras") NULL DEFAULT NULL,
     curso INT NOT NULL,
     año DATE NOT NULL
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
@@ -170,9 +131,9 @@ CREATE TABLE IF NOT EXISTS aficciones (
 DROP TABLE IF EXISTS curriculum;
 CREATE TABLE IF NOT EXISTS curriculum (
     codCurriculum INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    email VARCHAR(100) NOT NULL,
-    INDEX(email),
-    FOREIGN KEY (email) REFERENCES aspirante(email) ON UPDATE CASCADE ON DELETE CASCADE
+    idUsuario INT NOT NULL,
+    INDEX(idUsuario),
+    FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------

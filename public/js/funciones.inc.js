@@ -16,3 +16,11 @@ function deleteOption($id){
         contenedoresFormacion[contenedoresFormacion.length-1].remove();
     }
 };
+
+function mostrarFormulario($formLogIn,$formSigIn){
+    const antiguoDiv= document.getElementById($formLogIn);
+    const nuevoDiv= document.getElementById($formSigIn);
+
+    antiguoDiv.style.display = "none";
+    nuevoDiv.style.display = "block";
+}

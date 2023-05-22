@@ -9,30 +9,37 @@ class Usuario {
         $this -> objNewMysql = $objNewMysql;
     }
 
-    public function getSelectUser(array &$userRowsData){
-        $pdo = $this -> objNewMysql;
+    public function getUserSelect($emailAsp,$passAsp){
+        $pdo= $this -> objNewMysql;
+        $preparePDO= $pdo -> prepare("SELECT * FROM usuario usr WHERE usr.email = :email AND usr.contrasenia = :pass");
 
-        $query = "SELECT * FROM usuario usr;";
-        $prepareSelectQuery = $pdo -> query($query);
-        $userRowsData=array();
+        $preparePDO -> bindValue(":email",$emailAsp);
+        $preparePDO -> bindValue(":pass",$passAsp);
 
-        foreach ($prepareSelectQuery as $value){
-            $userRowsData[]=$value;
+        
+        $preparePDO -> execute();
+
+        if ($preparePDO -> rowCount() > 0) {
+            $queryResult = $preparePDO->fetchAll(PDO::FETCH_ASSOC);
+            $valueQuery = array();
+
+            foreach ($queryResult as $value) {
+                $valueQuery[] = $value;
+            }
+            return $valueQuery;
+        }else {
+            return false;
         }
-        return $userRowsData;
+        
+        
     }
 
-    public function setInsertUser($email,$contrasenia) :bool{
+    public function setInsertUser($userInfoArray) :bool{
 
         $pdo = $this -> objNewMysql;
-        $prepareQuery = $pdo -> prepare("INSERT INTO usuario VALUES (:usuario,:nameUser,:surname,null,:contrasenia)");
-    
-        $prepareQuery -> bindValue(":contrasenia",$contrasenia);
-        $prepareQuery -> bindValue(":usuario",$email);
-        $prepareQuery -> bindValue(":nameUser","marcos");
-        $prepareQuery -> bindValue(":surname","dominguez");
-
-        $prepareQuery -> execute();
+        $converOneString="'".implode("','",$userInfoArray)."'";
+        $prepareQuery= "INSERT INTO usuario (email,nombreUser,contrasenia,apellido1,tipoUsuario) VALUES ($converOneString);";
+        $prepareQuery = $pdo -> query($prepareQuery);
 
         if($prepareQuery){
             return true;
@@ -41,71 +48,3 @@ class Usuario {
         }
     }
 }
-
-
-
-class Aspirante extends Usuario {
-    private string $emailAspirante, $dni;
-    private int $codExpediente;
-
-    public string $fechaNac, $familia, $grado;
-    private object $objectDB;
-
-    public function __construct(){
-        $pdo = databaseConexion::conexion();
-        $this -> objectDB = $pdo;
-    }
-
-    public function getSelectAspirante($emailAsp,$passAsp){
-        $pdo= $this -> objectDB;
-        $preparePDO= $pdo -> prepare("SELECT asp.email as email FROM aspirante asp JOIN usuario usr ON usr.email = asp.email WHERE usr.email = :email AND usr.contrasenia = :pass");
-        $preparePDO -> bindValue(":email",$emailAsp);
-        $preparePDO -> bindValue(":pass",$passAsp);
-
-        
-        $preparePDO -> execute();
-        $queryResult= $preparePDO -> fetchAll(PDO::FETCH_ASSOC);
-
-        $valueQuery=array();
-
-        foreach($queryResult as $value){
-            $valueQuery[]=$value;
-        }
-        
-        return $valueQuery;
-    }
-
-    public function setInsertAspirante($email,$pass){
-        $pdo = $this -> objectDB;
-        $preparePDO = $pdo -> prepare("INSERT INTO aspirante (SELECT usr.email as email, usr.contrasenia as pass FROM usuario usr WHERE email = :email AND pass = :pass");
-
-        $preparePDO -> bindValue(":email",$email);
-        $preparePDO -> bindValue(":pass",$pass);
-
-        return $preparePDO -> execute();
-        
-    }
-}
-
-
-
-
-class Empresario extends Usuario {
-    private int $codEmpresa;
-    private string $emailEmpresario;
-    public function __construct($codEmpresa){
-        $emailEmpresario = $this -> email;
-        $this -> codEmpresa = $codEmpresa;
-        $this -> emailEmpresario = $emailEmpresario;
-    }
-
-    public function getCodEmpresa(){
-        return $this -> codEmpresa;
-    }
-
-    public function getEmailEmpresario(){
-        return $this -> emailEmpresario;
-    }
-}
-
-?>
