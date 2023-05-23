@@ -4,7 +4,7 @@
         <i class='bx bx-group' style='color:#ffffff; font-size:56px;'></i>
                 <h2>Nuestros jóvenes aspirantes</h2>
                 
-                <button>VEAMOS<i class='bx bx-right-arrow-alt'></i></button>
+                <a href="index.php?accion=mostrarVistaAspirantes">VEAMOS<i class='bx bx-right-arrow-alt'></i></a>
         </div>
     </article>
     <article class="services service2">
@@ -12,7 +12,7 @@
         <i class='bx bxs-file-doc' style='color:#ffffff; font-size:56px;'></i>
             <h2>Detalles del currículum</h2>
             
-            <button>QUIERO VERLO <i class='bx bx-right-arrow-alt'></i></button>
+            <a href="">QUIERO VERLO <i class='bx bx-right-arrow-alt'></i></a>
         </div>
     </article>
     <article class="services service3">
@@ -20,7 +20,7 @@
             <i class='bx bx-party' style='color:#ffffff; font-size:56px;'></i>
             <h2>Organiza tus propios eventos</h2>
             
-            <button>CREAR <i class='bx bx-right-arrow-alt'></i></button>
+            <a href="">CREAR <i class='bx bx-right-arrow-alt'></i></a>
         </div>
     </article>
 </section>

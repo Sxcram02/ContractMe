@@ -17,9 +17,8 @@
     <section id="GRP-services">
         <h1>SOMOS DE CONFIANZA</h1>
         <p>Empieza ahora a buscar tus aspirantes o encuentra al empresario perfecto</p>
-        <a href="index.php?accion=mostrarFormLogIn">
-            <button>VAMOS A ELLO<i class='bx bx-right-arrow-alt' style='color:#fffefe; font-size: 26px;'></i></button>
-        </a>
+        
+            <button><a href="/index.php?accion=mostrarFormLogIn">VAMOS A ELLO<i class='bx bx-right-arrow-alt' style='color:#fffefe; font-size: 26px;'></i></a></button>
     </section>
 <?php
 require_once("src/views/services.php");

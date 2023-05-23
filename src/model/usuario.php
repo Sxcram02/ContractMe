@@ -1,14 +1,30 @@
+
 <?php
+/**
+ * Usuario
+ */
 class Usuario {
     protected string $email;
     protected object $objNewMysql;
 
-    use databaseConexion;
+    use databaseConexion;    
+    /**
+     * __construct
+     *
+     * @return void
+     */
     public function __construct(){
         $objNewMysql = databaseConexion::conexion();
         $this -> objNewMysql = $objNewMysql;
     }
-
+    
+    /**
+     * getUserSelect
+     *
+     * @param  string $emailAsp
+     * @param  string $passAsp
+     * @return array|bool
+     */
     public function getUserSelect($emailAsp,$passAsp){
         $pdo= $this -> objNewMysql;
         $preparePDO= $pdo -> prepare("SELECT * FROM usuario usr WHERE usr.email = :email AND usr.contrasenia = :pass");
@@ -33,7 +49,13 @@ class Usuario {
         
         
     }
-
+    
+    /**
+     * setInsertUser
+     *
+     * @param  array $userInfoArray
+     * @return bool
+     */
     public function setInsertUser($userInfoArray) :bool{
 
         $pdo = $this -> objNewMysql;

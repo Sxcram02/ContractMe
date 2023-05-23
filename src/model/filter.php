@@ -1,5 +1,10 @@
 <?php
-trait databaseConexion {
+trait databaseConexion {        
+    /**
+     * conexion
+     *
+     * @return object|void
+     */
     public static function conexion(){
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

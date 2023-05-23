@@ -1,39 +1,59 @@
 <?php
 require_once("src/model/usuario.php");
+require_once("src/model/curriculum.php");
+
+/**
+ * Controller
+ * Controlador del MVC
+ */
 class Controller
 {
-    public function __construct()
-    {
-    }
-    public static function mostrarhomeUser()
-    {
+    public function __construct(){}
+
+    public static function mostrarhomeUser(){
         require_once("src/views/homeUser.php");
     }
 
-    public static function mostrarFormLogIn()
-    {
+    public static function mostrarFormLogIn(){
         require_once("src/views/formularioLogIn.php");
     }
-
-    public static function mostrarCurriculum(){
-        $_SESSION['typeUser'] = $_GET['tipoUsuario'];
-        $_SESSION['idUser'] = $_GET['idUser'];
-        require_once("src/views/viewCurriculum.php");
+    
+    public static function mostrarVistaAspirantes(){
+        require_once("src/views/vistas_aspirante.php");
     }
 
-    public static function sigInUser()
-    {
+    /**
+     * sigInUser
+     *
+     * @return void
+     */
+    public static function sigInUser(){
+        $isIssetValue = false;
         $insertRows = [$_POST['email'], $_POST['nameUser'], $_POST['pass'], $_POST['apellido1'], $_POST['tipoUsuario']];
 
-        $usuario = new Usuario();
-        $insert = $usuario->setInsertUser($insertRows);
-        if ($insert) {
-            header("Location:" . main);
+        for($count=0;$count<count($insertRows);$count++){
+            if(!empty($insertRows[$count])){
+                $isIssetValue = true;
+            }else {
+                $isIssetValue = false;
+            }
+        }
+
+        if($isIssetValue){
+            $usuario = new Usuario();
+            $insert = $usuario->setInsertUser($insertRows);
+            if ($insert) {
+                header("Location:" . main);
+            }
         }
     }
-
-    public static function mostrarHome()
-    {
+    
+    /**
+     * mostrarHome
+     *
+     * @return void view
+     */
+    public static function mostrarHome(){
         $email = $_POST['email'];
         $pass = $_POST['passwd'];
 
@@ -43,8 +63,6 @@ class Controller
             $emailTest = $dbFilas[0]['email'];
 
             if ($email == $emailTest) {
-
-                session_start();
 
                 $_SESSION['idUser'] = $dbFilas[0]['idUsuario'];
                 $_SESSION['typeUser'] = $dbFilas[0]['tipoUsuario'];

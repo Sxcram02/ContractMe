@@ -230,8 +230,13 @@ section {
     font-size: 30px;
     text-shadow: 2px 0px 0px var(--Negro);
 }
-
 #GRP-services button {
+    background: none;
+    border: none;
+}
+
+
+#GRP-services a {
     width: 225px;
     padding: 7%;
     border-radius: 20px;
@@ -246,7 +251,7 @@ section {
     justify-content: space-around;
 }
 
-#GRP-services button:hover {
+#GRP-services a:hover {
     transition: 0.5s all;
     background-color: #094076;
 }
@@ -277,10 +282,11 @@ section {
 }
 
 
-.services button {
+.services a {
     width: 250px;
     padding: 1%;
     text-transform: uppercase;
+    text-align: center;
     color: var(--Blanco);
     text-shadow: 0px 0px 2px var(--Blanco);
     background: none;
@@ -291,7 +297,7 @@ section {
     cursor: pointer;
 }
 
-.services button:hover {
+.services a:hover {
     transition: 0.6s all;
     background-color: var(--Blanco);
     color: var(--Negro);
@@ -427,6 +433,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 .target-LogIn form input, select {
@@ -435,7 +442,7 @@ section {
     padding: 1%;
     border: 1px solid var(--Negro);
     background-color: var(--Blanco);
-    border-radius: 20px;
+    border-radius: 5px;
     text-align: center;
     font-size: 18px;
     color: var(--Negro);
@@ -540,7 +547,7 @@ section {
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    list-style: inside;
+    list-style: none;
     font-size: 20px;
     font-weight: bold;
 }
@@ -549,11 +556,18 @@ section {
     width: 250px;
     border-radius: 5px;
     padding: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     background-color: #efefef96;
     color: var(--Negro);
+}
+
+.aspirante-nav-bar a, a:enabled, a:active, a:visited {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .aspirante-nav-bar li i {
