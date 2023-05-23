@@ -1,3 +1,0 @@
--- --------------------------------------
--- MySQL Script by Marcos DOminguez
--- @charset=utf8mb4
