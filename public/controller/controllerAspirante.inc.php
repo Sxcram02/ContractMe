@@ -2,18 +2,6 @@
     class ControllerAspirante {
         public function __construct(){}
 
-    /**
-     * mostrarCurriculum
-     *
-     * @return void
-     */
-    public static function mostrarCurriculum(){
-        $_SESSION['typeUser'] = $_GET['tipoUsuario'];
-        $_SESSION['idUser'] = $_GET['idUser'];
-        $_SESSION['nombreUser'] = $_GET['nombreUser'];
-        require_once("src/views/viewCurriculum.php");
-    }
-
     public static function mostrarVistaCurriculum(){
         $curriculum = new Curriculum();
         $idUsuario = $_SESSION['idUser'];
@@ -25,6 +13,19 @@
         }else {
             require_once("src/views/viewCurriculum.php");
         }
+    }
+
+    /**
+     * mostrarCurriculum
+     *
+     * @return void
+     */
+    public static function mostrarCurriculum(){
+        $_SESSION['typeUser'] = $_GET['typeUser'];
+        $_SESSION['idUser'] = $_GET['idUser'];
+        $_SESSION['nombreUser'] = $_GET['nombreUser'];
+        
+        require_once("src/views/viewCurriculum.php");
     }
     
     }

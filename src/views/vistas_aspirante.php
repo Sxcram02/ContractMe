@@ -1,9 +1,6 @@
 <?php
     require_once("src/views/layouts/header.php");
     require_once("src/views/layouts/container.php");
-
-    
-
     $curriculum = new Curriculum();
     $result = $curriculum -> getSelectCurriculums();
     $dataInfoCurriculums = array();

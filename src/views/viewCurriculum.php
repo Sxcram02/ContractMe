@@ -1,4 +1,6 @@
 <?php
+    require_once("src/views/layouts/header.php");
+    require_once("src/views/layouts/container.php");
 
     if($_SESSION['typeUser'] != "aspirante" || !isset($_SESSION['idUser'])){
         header("Location:".main);
@@ -6,7 +8,7 @@
     }
 ?>
 <section class="container-creacion-curriculum">
-    <form action="index.php?accion=mostrarVistaCurriculum" method="post">
+    <form action="index.php?servicio=mostrarVistaCurriculum" method="post">
         <article class="box-inputs">
             <label>Nombre del autor:</label>
             <input type="text" name="nombreCurriculum" value="<?php echo $_SESSION['nombreUser']
@@ -24,3 +26,5 @@
         </article>
     </form>
 </section>
+<?php
+    require_once("src/views/layouts/footer.php");

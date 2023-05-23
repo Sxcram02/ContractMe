@@ -30,13 +30,11 @@ class Controller
     public static function sigInUser(){
         $isIssetValue = false;
         $insertRows = [$_POST['email'], $_POST['nameUser'], $_POST['pass'], $_POST['apellido1'], $_POST['tipoUsuario']];
-
-        for($count=0;$count<count($insertRows);$count++){
-            if(!empty($insertRows[$count])){
-                $isIssetValue = true;
-            }else {
-                $isIssetValue = false;
-            }
+        
+        if(!empty($insertRows)){
+            $isIssetValue = true;
+        }else {
+            $isIssetValue = false;
         }
 
         if($isIssetValue){
@@ -80,4 +78,5 @@ class Controller
             header("Location:" . main);
         }
     }
+
 }

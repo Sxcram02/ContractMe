@@ -23,7 +23,7 @@ if(!isset($_SESSION['typeUser']) || $_SESSION['typeUser'] != 'aspirante'){
             <ul class="aspirante-nav-bar">
                 <li><a href=""><i class='bx bx-user' ></i>Perfil</a></li>
                 <li><a href=""><i class='bx bx-book-bookmark'></i>Cursos</a></li>
-                <li><a href="src/views/index.php?servicio=mostrarCurriculum&tipoUsuario=<?php echo $_SESSION['typeUser'] ?>&idUser=<?php echo $_SESSION['idUser'] ?>&nombreUser=<?php echo  $_SESSION['nombreUser'] ?>"><i class='bx bx-file' ></i>Curriculum</a></li>
+                <li><a href="index.php?servicio=mostrarCurriculum&typeUser=<?php echo $_SESSION['typeUser'] ?>&idUser=<?php echo $_SESSION['idUser'] ?>&nombreUser=<?php echo  $_SESSION['nombreUser'] ?>"><i class='bx bx-file' ></i>Curriculum</a></li>
                 <li><a href=""><i class='bx bx-file' ></i>Expediente</a></li>
                 <li><a href=""><i class='bx bx-envelope' ></i>Mensajes</a></li>
                 <li><a href=""><i class='bx bxs-contact' ></i>Contactos</a></li>
@@ -34,15 +34,8 @@ if(!isset($_SESSION['typeUser']) || $_SESSION['typeUser'] != 'aspirante'){
     <acticle class="container-servicios-aspirante">
         
         <div class="box-content-servicios">
-            <?php
-                    if (isset($_GET['servicio'])){
-                        if(method_exists("ControllerAspirante",$_GET['servicio'])){
-                            ControllerAspirante::{$_GET['servicio']}();
-                        }
-                    }
-            ?>
         </div>
     </acticle>
 </section>
 <?php
-require_once("src/views/layouts/footer.php");
+require_once("layouts/footer.php");
