@@ -1,3 +1,4 @@
+
 function mostrarContrasenya() {
     var x = document.getElementById("contrasenya");
     (x.type === "password")?x.type = "text":x.type = "password";
@@ -30,20 +31,20 @@ function comprobarRegularidad(){
     const username = document.getElementById("userSignInName").value;
     const pass = document.getElementById("userSignInPass").value;
 
-    $username = /^[A-Za-z]{1,20}[A-Za-z]$/;
+    $username = /^[A-Za-z]{1,20}$/;
     $email = /^[a-zA-Z]{1,80}([0-9])*@[a-z]+\.[a-z]{2}[a-z]$/;
 
 
     if(!$username.test(username) || username.length > 20){
-        alert("Ingrese un nombre válido")
-        return false
+        alert("Ingrese un nombre válido");
+        return false;
     }
 
     if(!$email.test(usermail) || usermail.length > 80){
-        alert("Ingrese un correo electrónico válido")
-        return false
+        alert("Ingrese un correo electrónico válido");
+        return false;
     }else {
-        return true
+        return true;
     }
 
 }

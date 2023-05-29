@@ -8,6 +8,8 @@ if(!isset($_SESSION['typeUser']) || $_SESSION['typeUser'] != 'aspirante'){
     exit();    
 }
 
+
+
 ?>
 <title>mi perfil</title>
 <section class="box-home-aspirante">
@@ -21,12 +23,12 @@ if(!isset($_SESSION['typeUser']) || $_SESSION['typeUser'] != 'aspirante'){
         </div>
         <nav class="box-aspirante-nav-bar">
             <ul class="aspirante-nav-bar">
-                <li><a href=""><i class='bx bx-user' ></i>Perfil</a></li>
-                <li><a href=""><i class='bx bx-book-bookmark'></i>Cursos</a></li>
-                <li><a href="index.php?servicio=mostrarCurriculum&typeUser=<?php echo $_SESSION['typeUser'] ?>&idUser=<?php echo $_SESSION['idUser'] ?>&nombreUser=<?php echo  $_SESSION['nombreUser'] ?>"><i class='bx bx-file' ></i>Curriculum</a></li>
-                <li><a href=""><i class='bx bx-file' ></i>Expediente</a></li>
-                <li><a href=""><i class='bx bx-envelope' ></i>Mensajes</a></li>
-                <li><a href=""><i class='bx bxs-contact' ></i>Contactos</a></li>
+                <li><button type="submit"><i class='bx bx-user' ></i>Perfil</button></li>
+                <li><button type="submit"><i class='bx bx-book-bookmark'></i>Cursos</button></li>
+                <li><button type="submit"><i class='bx bx-file' ></i>Curriculum</button></li>
+                <li><button type="submit"><i class='bx bx-file' ></i>Expediente</button></li>
+                <li><button type="submit"><i class='bx bx-envelope' ></i>Mensajes</button></li>
+                <li><button type="submit"><i class='bx bxs-contact' ></i>Contactos</button></li>
             </ul>
         </nav>
     </aside>
@@ -34,8 +36,16 @@ if(!isset($_SESSION['typeUser']) || $_SESSION['typeUser'] != 'aspirante'){
     <acticle class="container-servicios-aspirante">
         
         <div class="box-content-servicios">
+            <?php
+                require_once("public/controller/controllerAspirante.inc.php");
+                $viewAspirant = new ControllerAspirante();
+
+                $viewAspirant -> mostrarCurriculum("aspirante","21","demonHate");
+                
+                require_once("src/views/".$viewAspirant -> viewAspirante.".php");
+            ?>
         </div>
     </acticle>
 </section>
 <?php
-require_once("layouts/footer.php");
+require_once("src/views/layouts/footer.php");

@@ -1,4 +1,5 @@
 <?php
+    require_once("public/controller/controllerAspirante.inc.php");
     require_once("src/views/layouts/header.php");
     require_once("src/views/layouts/container.php");
 
@@ -8,7 +9,7 @@
     }
 ?>
 <section class="container-creacion-curriculum">
-    <form action="index.php?servicio=mostrarVistaCurriculum" method="post">
+    <form action="" method="post">
         <article class="box-inputs">
             <label>Nombre del autor:</label>
             <input type="text" name="nombreCurriculum" value="<?php echo $_SESSION['nombreUser']
@@ -24,6 +25,12 @@
             <input type="text" name="tlfMovil" >
             <input type="submit" value="guardar" name="guardarCurriculum">
         </article>
+        <?php
+            if(!isset($_POST['guardarCurriculum'])){
+                $idUsuario = $_SESSION['idUser'];
+                ControllerAspirante::mostrarVistaCurriculum($idUsuario);
+            }
+        ?>
     </form>
 </section>
 <?php

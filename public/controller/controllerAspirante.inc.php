@@ -1,17 +1,15 @@
 <?php
     class ControllerAspirante {
+
+        public string $viewAspirante;
         public function __construct(){}
 
-    public static function mostrarVistaCurriculum(){
+    public static function mostrarVistaCurriculum($idUsuario){
         $curriculum = new Curriculum();
-        $idUsuario = $_SESSION['idUser'];
-
         $createCurriculum = $curriculum -> createCurriculum($idUsuario);
 
         if($createCurriculum){
             require_once("src/views/layouts/homeCurriculum.php");
-        }else {
-            require_once("src/views/viewCurriculum.php");
         }
     }
 
@@ -20,12 +18,13 @@
      *
      * @return void
      */
-    public static function mostrarCurriculum(){
-        $_SESSION['typeUser'] = $_GET['typeUser'];
-        $_SESSION['idUser'] = $_GET['idUser'];
-        $_SESSION['nombreUser'] = $_GET['nombreUser'];
+    public function mostrarCurriculum(string $typeUser,int $idUser,string $nombreUser){
+
+        $_SESSION['typeUser'] = $typeUser;
+        $_SESSION['idUser'] = $idUser;
+        $_SESSION['nombreUser'] = $nombreUser;
         
-        require_once("src/views/viewCurriculum.php");
+        $this -> viewAspirante = "viewCurriculum";
     }
     
     }
