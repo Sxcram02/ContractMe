@@ -1,13 +1,13 @@
     <header id="GRP-header">
         <div id="GRP-firstTitle" class="GRP-box-content-header">
-            <a href="/index.php?accion=mostrarhomeUser">
+            <a href="/index.php?accion=mostrarHomeUser">
                 <img src="/public/img/logo.png" alt="logo_CIFP">
             </a>
         </div>
 
         <nav id="GRP-navBar">
             <ul class="GRP-box-content-header">
-                <a href="/index.php?accion=mostrarhomeUser">
+                <a href="/index.php?accion=mostrarHomeUser">
                     <li>Inicio</li>
                 </a>
                 <a href="#GRP-servicesPlaces">

@@ -1,134 +1,134 @@
 Search.appendIndex(
     [
-                {
+        {
             "fqsen": "\\DB_HOST",
             "name": "DB_HOST",
             "summary": "",
             "url": "namespaces/default.html#constant_DB_HOST"
-        },                {
+        }, {
             "fqsen": "\\DB_USER",
             "name": "DB_USER",
             "summary": "",
             "url": "namespaces/default.html#constant_DB_USER"
-        },                {
+        }, {
             "fqsen": "\\DB_PASS",
             "name": "DB_PASS",
             "summary": "",
             "url": "namespaces/default.html#constant_DB_PASS"
-        },                {
+        }, {
             "fqsen": "\\main",
             "name": "main",
             "summary": "",
             "url": "namespaces/default.html#constant_main"
-        },                {
+        }, {
             "fqsen": "\\Controller",
             "name": "Controller",
             "summary": "Controller\nControlador\u0020del\u0020MVC",
             "url": "classes/Controller.html"
-        },                {
+        }, {
             "fqsen": "\\Controller\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
             "url": "classes/Controller.html#method___construct"
-        },                {
-            "fqsen": "\\Controller\u003A\u003AmostrarhomeUser\u0028\u0029",
-            "name": "mostrarhomeUser",
+        }, {
+            "fqsen": "\\Controller\u003A\u003AmostrarHomeUser\u0028\u0029",
+            "name": "mostrarHomeUser",
             "summary": "",
-            "url": "classes/Controller.html#method_mostrarhomeUser"
-        },                {
+            "url": "classes/Controller.html#method_mostrarHomeUser"
+        }, {
             "fqsen": "\\Controller\u003A\u003AmostrarFormLogIn\u0028\u0029",
             "name": "mostrarFormLogIn",
             "summary": "",
             "url": "classes/Controller.html#method_mostrarFormLogIn"
-        },                {
+        }, {
             "fqsen": "\\Controller\u003A\u003AmostrarCurriculum\u0028\u0029",
             "name": "mostrarCurriculum",
             "summary": "mostrarCurriculum",
             "url": "classes/Controller.html#method_mostrarCurriculum"
-        },                {
+        }, {
             "fqsen": "\\Controller\u003A\u003AmostrarVistaCurriculum\u0028\u0029",
             "name": "mostrarVistaCurriculum",
             "summary": "",
             "url": "classes/Controller.html#method_mostrarVistaCurriculum"
-        },                {
+        }, {
             "fqsen": "\\Controller\u003A\u003AsigInUser\u0028\u0029",
             "name": "sigInUser",
             "summary": "sigInUser",
             "url": "classes/Controller.html#method_sigInUser"
-        },                {
+        }, {
             "fqsen": "\\Controller\u003A\u003AmostrarHome\u0028\u0029",
             "name": "mostrarHome",
             "summary": "mostrarHome",
             "url": "classes/Controller.html#method_mostrarHome"
-        },                {
+        }, {
             "fqsen": "\\Curriculum",
             "name": "Curriculum",
             "summary": "Curriculum\u0020Model",
             "url": "classes/Curriculum.html"
-        },                {
+        }, {
             "fqsen": "\\Curriculum\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "__construct",
             "url": "classes/Curriculum.html#method___construct"
-        },                {
+        }, {
             "fqsen": "\\Curriculum\u003A\u003AcreateCurriculum\u0028\u0029",
             "name": "createCurriculum",
             "summary": "setCurriculum",
             "url": "classes/Curriculum.html#method_createCurriculum"
-        },                {
+        }, {
             "fqsen": "\\Curriculum\u003A\u003AcreateAficciones\u0028\u0029",
             "name": "createAficciones",
             "summary": "",
             "url": "classes/Curriculum.html#method_createAficciones"
-        },                {
+        }, {
             "fqsen": "\\Curriculum\u003A\u003A\u0024mySQLObject",
             "name": "mySQLObject",
             "summary": "",
             "url": "classes/Curriculum.html#property_mySQLObject"
-        },                {
+        }, {
             "fqsen": "\\databaseConexion",
             "name": "databaseConexion",
             "summary": "",
             "url": "classes/databaseConexion.html"
-        },                {
+        }, {
             "fqsen": "\\databaseConexion\u003A\u003Aconexion\u0028\u0029",
             "name": "conexion",
             "summary": "conexion",
             "url": "classes/databaseConexion.html#method_conexion"
-        },                {
+        }, {
             "fqsen": "\\Usuario",
             "name": "Usuario",
             "summary": "Usuario",
             "url": "classes/Usuario.html"
-        },                {
+        }, {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "__construct",
             "url": "classes/Usuario.html#method___construct"
-        },                {
+        }, {
             "fqsen": "\\Usuario\u003A\u003AgetUserSelect\u0028\u0029",
             "name": "getUserSelect",
             "summary": "getUserSelect",
             "url": "classes/Usuario.html#method_getUserSelect"
-        },                {
+        }, {
             "fqsen": "\\Usuario\u003A\u003AsetInsertUser\u0028\u0029",
             "name": "setInsertUser",
             "summary": "setInsertUser",
             "url": "classes/Usuario.html#method_setInsertUser"
-        },                {
+        }, {
             "fqsen": "\\Usuario\u003A\u003A\u0024email",
             "name": "email",
             "summary": "",
             "url": "classes/Usuario.html#property_email"
-        },                {
+        }, {
             "fqsen": "\\Usuario\u003A\u003A\u0024objNewMysql",
             "name": "objNewMysql",
             "summary": "",
             "url": "classes/Usuario.html#property_objNewMysql"
-        },                {
+        }, {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
             "url": "namespaces/default.html"
-        }            ]
+        }]
 );

@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS filtroEstudios (
 
     FOREIGN KEY (estudios) REFERENCES estudios(idTitulo) ON UPDATE CASCADE ON DELETE CASCADE,
 
-    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE RESTRICT ON DELETE RESTRICT
+    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS filtroExperiencia (
 
     FOREIGN KEY (experiencia) REFERENCES experiencia(idExperiencia) ON UPDATE CASCADE ON DELETE CASCADE,
 
-    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE RESTRICT ON DELETE RESTRICT
+    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS filtroAptitudes (
 
     FOREIGN KEY (aptitudes) REFERENCES aptitudes(idAptitud) ON UPDATE CASCADE ON DELETE CASCADE,
 
-    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE RESTRICT ON DELETE RESTRICT
+    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS filtroIdiomas (
 
     FOREIGN KEY (idiomas) REFERENCES idiomas(idIdiomas) ON UPDATE CASCADE ON DELETE CASCADE,
 
-    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE RESTRICT ON DELETE RESTRICT
+    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS filtroDireccion (
 
     FOREIGN KEY (direccion) REFERENCES direccion(idDireccion) ON UPDATE CASCADE ON DELETE CASCADE,
 
-    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE RESTRICT ON DELETE RESTRICT
+    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
 -- --------------------------------------
@@ -230,5 +230,5 @@ CREATE TABLE IF NOT EXISTS filtroAficcion (
 
     FOREIGN KEY (aficciones) REFERENCES aficciones(idAficcion) ON UPDATE CASCADE ON DELETE CASCADE,
 
-    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE RESTRICT ON DELETE RESTRICT
+    FOREIGN KEY (curriculum) REFERENCES curriculum(codCurriculum) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;

@@ -2,6 +2,8 @@
 <?php
 /**
  * Usuario
+ * @param string $email
+ * @param object $objNewMysql
  */
 class Usuario {
     protected string $email;
@@ -28,13 +30,9 @@ class Usuario {
     public function getUserSelect($emailAsp,$passAsp){
         $pdo= $this -> objNewMysql;
         $preparePDO= $pdo -> prepare("SELECT * FROM usuario usr WHERE usr.email = :email AND usr.contrasenia = :pass");
-
         $preparePDO -> bindValue(":email",$emailAsp);
-        $preparePDO -> bindValue(":pass",$passAsp);
-
-        
+        $preparePDO -> bindValue(":pass",$passAsp);    
         $preparePDO -> execute();
-
         if ($preparePDO -> rowCount() > 0) {
             $queryResult = $preparePDO->fetchAll(PDO::FETCH_ASSOC);
             $valueQuery = array();
@@ -46,8 +44,6 @@ class Usuario {
         }else {
             return false;
         }
-        
-        
     }
     
     /**
@@ -57,12 +53,10 @@ class Usuario {
      * @return bool
      */
     public function setInsertUser($userInfoArray) :bool{
-
         $pdo = $this -> objNewMysql;
         $converOneString="'".implode("','",$userInfoArray)."'";
         $prepareQuery= "INSERT INTO usuario (email,nombreUser,contrasenia,apellido1,tipoUsuario) VALUES ($converOneString);";
         $prepareQuery = $pdo -> query($prepareQuery);
-
         if($prepareQuery){
             return true;
         }else{

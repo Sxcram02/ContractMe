@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="src/views/css/estilos.css" type="text/css">
     <link rel="shortcut icon" href="/public/img/logo.png" type="image/x-icon">
     <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="public/fonts">
 </head>
 
 <body id="GRP-root">

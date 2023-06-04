@@ -3,41 +3,66 @@ require_once("src/model/usuario.php");
 require_once("src/model/curriculum.php");
 
 /**
- * Controller
+ * @static Controller
  * Controlador del MVC
  */
 class Controller
 {
-    public function __construct(){}
-
-    public static function mostrarhomeUser(){
-        require_once("src/views/homeUser.php");
+    /**
+     * @method @static __construct()
+     *
+     * @return void
+     */
+    public function __construct()
+    {
     }
 
-    public static function mostrarFormLogIn(){
+    /**
+     * @method @static mostrarHomeUser()
+     *
+     * @return void
+     */
+    public static function mostrarHomeUser()
+    {
+        require_once("src/views/homeUser.php");
+    }
+    
+    /**
+     * @method @static mostrarFormLogin()
+     *
+     * @return void
+     */
+    public static function mostrarFormLogIn()
+    {
         require_once("src/views/formularioLogIn.php");
     }
     
-    public static function mostrarVistaAspirantes(){
+    /**
+     * @method @static mostrarVistaAspirantes()
+     *
+     * @return void
+     */
+    public static function mostrarVistaAspirantes()
+    {
         require_once("src/views/vistas_aspirante.php");
     }
 
     /**
-     * sigInUser
-     *
+     * @method @static sigInUser()
      * @return void
      */
-    public static function sigInUser(){
+    public static function sigInUser()
+    {
         $isIssetValue = false;
         $insertRows = [$_POST['email'], $_POST['nameUser'], $_POST['pass'], $_POST['apellido1'], $_POST['tipoUsuario']];
-        
-        if(!empty($insertRows)){
+
+        if (!empty($insertRows)) {
             $isIssetValue = true;
-        }else {
+        } else {
             $isIssetValue = false;
         }
 
-        if($isIssetValue){
+        if ($isIssetValue) {
             $usuario = new Usuario();
             $insert = $usuario->setInsertUser($insertRows);
             if ($insert) {
@@ -45,13 +70,13 @@ class Controller
             }
         }
     }
-    
+
     /**
-     * mostrarHome
-     *
-     * @return void view
+     * @method @static mostrarHome()
+     * @return void views
      */
-    public static function mostrarHome(){
+    public static function mostrarHome()
+    {
         $email = $_POST['email'];
         $pass = $_POST['passwd'];
 
@@ -78,5 +103,4 @@ class Controller
             header("Location:" . main);
         }
     }
-
 }

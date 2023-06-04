@@ -2,7 +2,7 @@
 trait databaseConexion {        
     /**
      * conexion
-     *
+     * @exception $error
      * @return object|void
      */
     public static function conexion(){
