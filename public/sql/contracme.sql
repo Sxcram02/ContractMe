@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS usuario(
     fechaNacimiento DATE NOT NULL,
     tipoUsuario ENUM("Empresario","Aspirante","Docente") NOT NULL,
     codExpediente INT NULL DEFAULT NULL,
-    FOREIGN KEY (codExpediente) REFERENCES expediente(codExpediente) ON UPDATE RESTRICT ON DELETE CASCADE
+    FOREIGN KEY (codExpediente) REFERENCES expediente(codExpediente) ON UPDATE CASCADE ON DELETE CASCADE
 
 )ENGINE = INNODB DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_spanish_ci;
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS direccion(
     idDireccion INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     codPostal CHAR(5) NOT NULL,
     calle VARCHAR(70) NOT NULL,
-    edificio INT NULL DEFAULT NULL,
+    edificio CHAR(3) NULL DEFAULT NULL,
     idUsuario INT NOT NULL,
     FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario) ON UPDATE CASCADE ON DELETE CASCADE 
 
