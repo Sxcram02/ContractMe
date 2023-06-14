@@ -1,0 +1,652 @@
+
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------GRUPO 1 CSS--------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP-root {
+    background-image: url("./../../../public/img/pattern.jpeg");
+    background-size: cover;
+}
+
+.root {
+    width: 100vw;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- HEADER LAYOUTS ----------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+#GRP-header {
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #efefefc3;
+}
+
+.GRP-box-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    cursor: pointer;
+}
+
+.GRP-box-content-header ul {
+    width: 100%;
+}
+
+.GRP-box-content-header li {
+    text-align: center;
+    padding: 2%;
+    margin-left: 2%;
+    border-radius: 10px;
+    text-shadow: 1px 0px 0px #717171;
+    cursor: pointer;
+}
+
+#GRP-navBar a,
+a:enabled,
+a:visited,
+a:active {
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#GRP-navBar a:hover {
+    transition: 0.6s all;
+    background-color: var(--Negro);
+    color: var(--Blanco);
+    text-shadow: 2px 0px 0px black;
+}
+
+#GRP-firstTitle {
+    width: 50%;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--Azul);
+}
+
+#GRP-firstTitle img {
+    width: 100px;
+    height: 100px;
+    padding: 1%;
+}
+
+#GRP-navBar {
+    width: 50%;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- CONTAINER LAYOUTS --------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-LogIn {
+    height: 100%;
+    width: 50%;
+    background-color: var(--Blanco);
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- FOOTER LAYOUTS ------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP-footer {
+    width: 100%;
+    padding: 1%;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- VIEW HOME USER ------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP-homeUser {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.homeArticle {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------------------------- SECCION 1 ------------------------------ */
+
+#GRP-IntroObjective {
+    font-weight: 600;
+    font-size: 22px;
+    text-align: start;
+    align-items: flex-start;
+    padding: 2%;
+}
+
+#GRP-IntroObjective h1 {
+    font-size: 50px;
+    text-shadow: 2px 0px 0px var(--Gris-oscuro);
+}
+
+#GRP-IntroObjective h3 {
+    font-size: 18px;
+    color: #0A4E92;
+    padding: 3%;
+}
+
+#GRP-logo3DModel img {
+    width: 100%;
+}
+
+/* ---------------------------- SECCION 2 ------------------------------ */
+
+#GRP-services {
+    width: 100%;
+    height: 10%;
+    padding: 4%;
+    background-color: #0A4E92;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--Blanco);
+}
+
+#GRP-services h1 {
+    font-size: 30px;
+    text-shadow: 2px 0px 0px var(--Negro);
+}
+
+#GRP-services button {
+    background: none;
+    border: none;
+}
+
+
+#GRP-services a {
+    width: 225px;
+    padding: 7%;
+    border-radius: 20px;
+    border: none;
+    background-color: #167de3;
+    color: var(--Blanco);
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#GRP-services a:hover {
+    transition: 0.5s all;
+    background-color: #094076;
+}
+
+/* ---------------------------- SECCION 3 ------------------------------ */
+
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------VIEW LOG IN -------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#GRP-formLogIn {
+    width: 100vw;
+    height: 100vh;
+    padding: 2%;
+    font-size: 17px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1.4fr);
+}
+
+.target-LogIn {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 70%;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box-content-target {
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+    background-color: #dddddd68;
+}
+
+#box-content-target2 {
+    display: none;
+}
+
+#GRP-formLogIn article {
+    width: 100%;
+}
+
+.box-content-target .box-buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box-buttons button {
+    width: 150px;
+    height: 45px;
+    padding: 1%;
+    background-color: var(--Azul);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 800;
+}
+
+.box-buttons button:hover {
+    transition: 0.3s linear;
+    cursor: pointer;
+    background-color: #053a6e;
+}
+
+.target-LogIn form {
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.target-LogIn form input,
+select {
+    width: 70%;
+    height: 40px;
+    padding: 1%;
+    border: 1px solid var(--Negro);
+    background-color: var(--Blanco);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--Negro);
+    font-weight: 800;
+    margin-bottom: 3%;
+}
+
+
+.target-LogIn form input:hover {
+    background-color: var(--Gris-claro);
+    color: var(--Negro);
+}
+
+.target-LogIn .sentPostForm {
+    width: 50%;
+    height: 50px;
+    padding: 1%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 0px 0px var(--Blanco);
+    border: none;
+    box-shadow: 0px 0px 2px var(--Negro);
+    background-color: var(--Gris-claro);
+    cursor: pointer;
+}
+
+.target-LogIn .sentPostForm:hover {
+    transition: 0.3s linear;
+    background-color: var(--Gris-oscuro);
+    color: var(--Blanco);
+    text-shadow: 0px 0px 2px var(--Blanco);
+    box-shadow: 0px 0px 2px var(--Blanco);
+}
+
+.box-model3D {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.box-model3D img {
+    width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------VIEW ASPIRANTE------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.box-home-aspirante {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1.4fr);
+    color: var(--Blanco);
+    text-shadow: 1px 0px 2px var(--Gris-oscuro);
+
+}
+
+.container-presentacion-aspiarnte {
+    width: 100%;
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    padding: 1%;
+}
+
+.box-presentacion {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-imagen-perfil {
+    height: 40%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    font-size: 20px;
+    color: #07b4f896;
+}
+
+.box-imagen-perfil i {
+    font-size: 50px;
+    color: #07b4f896;
+}
+
+.box-aspirante-nav-bar {
+    width: 100%;
+    height: 60%;
+}
+
+.aspirante-nav-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.aspirante-nav-bar li {
+    width: 250px;
+    border-radius: 5px;
+}
+
+.aspirante-nav-bar button {
+    background-color: #07b4f896;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: space-around;
+}
+
+.aspirante-nav-bar li i {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.aspirante-nav-bar li:hover {
+    transition: 0.2s all;
+    background: none;
+    border: 1px solid var(--Negro);
+    text-shadow: 0px 0px 4px var(--Gris-oscuro);
+    cursor: pointer;
+    color: var(--Blanco);
+}
+
+.container-servicios-aspirante {
+    width: 100%;
+    height: 100%;
+    grid-column: 2/4;
+    grid-row: 1/3;
+    padding: 1%;
+    color: var(--Negro);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------1ª PART VIEW CURRICULUM FORM ASPIRANTE-------------------*/
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#container-creacion-curriculum {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.4fr 1.4fr 1.4fr;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.box-inputs {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: justify;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box-inputs input {
+    width: 300px;
+    border-radius: 5px;
+    padding: 1%;
+    margin-top: 2%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box-creacion-curriculum {
+    width: 95%;
+    height: 100%;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+    background-color: var(--Blanco);
+    border: 2px solid var(--Negro);
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.box-inputs2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*-----------------------FIRST PART FORM CURRICULUM---------------------------*/
+.box1-form-curriculum {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+/*----------------------SECOND PART FORM CURRICULUM---------------------------*/
+.box2-form-curriculum {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+/*----------------------THIRD PART FORM CURRICULUM---------------------------*/
+.box3-form-curriculum {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+/*----------------------FOUR PART FORM CURRICULUM---------------------------*/
+
+.box4-form-curriculum {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    height: 80%;
+}
+
+.box4-form-curriculum article {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1%;
+}
+
+.box4-form-curriculum article select {
+    width: 100px;
+}
+
+.box4-form-curriculum article input {
+    width: 250px;
+    border-radius: 5px;
+    padding: 1%;
+    margin-left: 2%;
+}
+
+.box4-form-curriculum article input[type="submit"]{
+    width: 400px;
+    padding: 2%;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.box4-form-curriculum article label {
+    margin-right: 1%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------2ª PART VIEW CURRICULUM FORM ASPIRANTE-------------------*/
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.container2-creacion-curriculum {
+
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------VIEW CURRICULUM ASPIRANTES----------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.container-vistas-aspirante {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.box-content-curriculum {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box-content-curriculum ul {
+    width: 50%;
+    height: 50%;
+    padding: 2%;
+    border-radius: 5px;
+    list-style: none;
+    background-color: #0000006e;
+    color: var(--Blanco);
+    text-shadow: 1px 0px 3px var(--Gris-oscuro);
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------VIEW PERFIL ASPIRANTES--------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#container-perfil-aspirante {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-view-aspirante {
+    display: none !important;
+}
+
+.v2container-view-aspirante {
+    display: block;
+}

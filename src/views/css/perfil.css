@@ -1,0 +1,145 @@
+@import url("index.css");
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+#container-perfil-aspirante {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(1 1fr);
+    column-gap: 5px;
+}
+
+#container-perfil-aspirante article {
+    height: 100vh;
+}
+
+.box-perfil-intro {
+    width: 90%;
+    margin: 5%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: var(--Blanco);
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px var(--Negro);
+}
+
+.box-image-perfil {
+    width: 100%;
+    height: 10rem;
+    background-image: url("../../img/background-perfil.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 4%;
+}
+
+.box-image-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.target-info-perfil {
+    width: 500px;
+    height: 150px;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.target-info-perfil form {
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    margin-bottom: 2%;
+}
+
+.target-info-perfil form input {
+    height: 45px;
+    border-radius: 5px;
+    margin: 1%;
+    padding: 1%;
+}
+
+.target-cursos-perfil {
+    width: 300px;
+    height: 150px;
+    border: 1px solid var(--Negro);
+    padding: 5%;
+    border-radius: 10px;
+    background-color: var(--Gris-claro);
+}
+
+.box-elements-aspirante {
+    width: 100%;
+    height: 100vh;
+    padding: 10%;
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.box-elements-aspirante section {
+    width: 100%;
+    height: 90%;
+    padding: 1%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: justify;
+}
+
+.calendario-curso {
+    width: 350px;
+    height: 300px;
+    padding: 1%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    background-color: var(--Gris-claro);
+    box-shadow: 0px 0px 3px var(--Gris-oscuro);
+}
+
+.calendario{
+    width: 350px;
+    height: 300px;
+    padding: 5%;
+    font-size: 12px;
+}
+
+.calendar-month {
+    padding: 2%;
+    text-transform: uppercase;
+    color: var(--Negro);
+    border: none;
+    text-align: center;
+}
+
+.column-cursos {
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    align-items: justify;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box-cursos {
+    width: 50%;
+    height: 100%;
+    margin-top: 2%;
+}
+
+.curso {
+    width: 100%;
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

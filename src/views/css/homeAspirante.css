@@ -1,0 +1,78 @@
+@import url("index.css");
+
+.container-view-aspirante {
+    display: none;
+}
+
+.v2container-view-aspirante {
+    display: block;
+}
+
+#GRP-homeAspirante {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.container-presentacion-aspiarnte {
+    width: 100%;
+    height: 5rem;
+}
+
+.box-presentacion {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-imagen-perfil {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box-aspirante-nav-bar {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.aspirante-nav-bar {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.aspirante-nav-bar li {
+    width: 150px;
+    height: 50px;
+    padding: 1%;
+}
+
+.aspirante-nav-bar li button {
+    width: 100%;
+    border: 2px solid var(--Negro);
+    background: none;
+    padding: 1%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.aspirante-nav-bar li button:hover {
+    transition: 0.3s linear;
+    border: none;
+    background-color: var(--Amarillo);
+}
