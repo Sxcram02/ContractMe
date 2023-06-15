@@ -1,5 +1,5 @@
 <?php
-require_once("./../../config.inc.php");
+require_once("../../config.inc.php");
 require_once("../model/filter.php");
 require_once("../model/usuario.php");
 require_once("../model/telefono.php");
@@ -16,6 +16,7 @@ switch ($_GET['opcion']) {
             if ($usuario && $_POST['userEmail'] == $usuario->__get("email")) {
                 $_SESSION['userId'] = $usuario->__get("idUsuario");
                 $_SESSION['nombreUsuario'] = $usuario->__get("nombreUsuario");
+                $_SESSION['apellidos'] = $usuario -> __get('apellidos');
                 $_SESSION['tipoUsuario'] = $usuario->__get("tipoUsuario");
                 $_SESSION['emailUsuario'] = $usuario->__get("email");
 
@@ -41,14 +42,8 @@ switch ($_GET['opcion']) {
                 
                 Direccion::createDireccion($_POST['codigoPostal'],$_POST['calle'],$_POST['edificio'],$usuario -> __get('idUsuario'));
                 Direccion::obtenerDireccion($usuario ->__get('idUsuario'));
-
-                $_SESSION['userId'] = $usuario->__get("idUsuario");
-                $_SESSION['nombreUsuario'] = $usuario->__get("nombreUsuario");
-                $_SESSION['tipoUsuario'] = $usuario->__get("tipoUsuario");
-
-                match ($usuario->__get("tipoUsuario")) {
-                    "Aspirante" => header("Location: ./aspiranteC.php")
-                };
+                
+                header("Location: ./usuarioC.php");
             }
         }else {
             include_once("../views/signup.php");

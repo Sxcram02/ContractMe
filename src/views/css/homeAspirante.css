@@ -9,70 +9,51 @@
 }
 
 #GRP-homeAspirante {
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
+    width: 100vw;
+    background-color: var(--Blanco);
 }
 
-.container-presentacion-aspiarnte {
+.box-home-aspirante {
     width: 100%;
-    height: 5rem;
+    height: 100%;
+    display: flex;
+    overflow-x: hidden;
+}
+
+.container-presentacion-aspirante {
+    width: 70vw;
+    height: 100%;
+}
+
+.container-servicios-aspirante {
+    width: 70vw;
+    height: 100%;
 }
 
 .box-presentacion {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    background-color: var(--Gris-claro);
 }
 
 .box-imagen-perfil {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    width: 100%;
+    height: 10%;
 }
 
 .box-aspirante-nav-bar {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    height: 90%;
 }
 
 .aspirante-nav-bar {
-    width: 100%;
-    height: 100%;
-    list-style: none;
+    height: 35%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
-}
-
-
-.aspirante-nav-bar li {
-    width: 150px;
-    height: 50px;
-    padding: 1%;
-}
-
-.aspirante-nav-bar li button {
-    width: 100%;
-    border: 2px solid var(--Negro);
-    background: none;
-    padding: 1%;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.aspirante-nav-bar li button:hover {
-    transition: 0.3s linear;
-    border: none;
-    background-color: var(--Amarillo);
 }

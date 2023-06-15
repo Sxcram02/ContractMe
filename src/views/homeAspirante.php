@@ -9,9 +9,9 @@ session_start();
     <article class="container-presentacion-aspiarnte">
         <aside class="box-presentacion">
             <div class="box-imagen-perfil">
-                <i class='bx bx-user-circle' style="font-size: 46px; font-weight:400;"></i>
-                <h4>Nombre: <?php echo  $_SESSION['nombreUsuario'] ?></h4>
-                <p>Rango: <?php echo  $_SESSION['tipoUsuario'] ?></p>
+                <a href="../../index.php"><i class='bx bx-user-circle' style="font-size: 46px; font-weight:400;"></i></a>
+                <h4><?php echo  $_SESSION['nombreUsuario']." ".$_SESSION['apellidos'] ?></h4>
+                <p><?php echo  $_SESSION['tipoUsuario'] ?></p>
             </div>
             <nav class="box-aspirante-nav-bar">
                 <ul class="aspirante-nav-bar">
@@ -19,11 +19,7 @@ session_start();
 
                     <li id="option"><button type="submit" onclick="mostrarButonOption(this,'container-cursos-aspirante');"><i class='bx bx-book-bookmark'></i>Cursos</button></li>
 
-                    <li><button id="option" onclick="mostrarButonOption(this,'container-creacion-curriculum');" value="curriculum"><i class='bx bx-file'></i>Curriculum</button></li>
-
                     <li><button type="submit"><i class='bx bx-file'></i>Expediente</button></li>
-
-                    <li><button type="submit"><i class='bx bx-envelope'></i>Mensajes</button></li>
 
                     <li><button type="submit"><i class='bx bxs-contact'></i>Contactos</button></li>
                 </ul>
@@ -33,8 +29,8 @@ session_start();
     <acticle class="container-servicios-aspirante">
         <div class="box-content-servicios" id="box-content-servicios">
             <?php
-                require_once("viewPerfilAspirante.php");
-                require_once("viewFormCurriculum.php");
+                include_once("viewPerfilAspirante.php");
+                // require_once("viewFormCurriculum.php");
             ?>
         </div>
     </acticle>

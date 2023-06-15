@@ -25,7 +25,7 @@
 .box-titles-homeUsers {
     width: 100%;
     font-size: 56px;
-    text-shadow: 9px 0px 0px var(--Gris-oscuro);
+    text-shadow: -9px 0px 0px var(--Gris-oscuro);
 }
 
 #modelo3D-homeUser {
