@@ -1,10 +1,10 @@
 <?php
-    include_once("layouts/header.php");
-    include_once("layouts/container.php");
+    include_once("../views/layouts/header.php");
+    include_once("../views/layouts/container.php");
     error_reporting(E_PARSE | E_ERROR);
 ?>
 <title>CME - signup</title>
-<form action="../controller/usuarioC.php?opcion=signup" method="post">
+<form action="" method="post">
 <section id="GRP-formSignUp">    
     <aside></aside>
     <article class="target-SignUp visible" id="signup-part1">
@@ -22,7 +22,7 @@
             <span class="siguiente" onclick="mostrarSecondPartForm('signup-part1','signup-part2')">Siguiente</span>
         </div>
         <div class="box-buttons4">
-            <a href="?opcion=login">Ya tengo una cuenta</a>
+            <a href="login.php">Ya tengo una cuenta</a>
         </div>
     </article>
     <article class="target-SignUp invisible" id="signup-part2">
@@ -45,7 +45,7 @@
             <span class="siguiente" onclick="mostrarSecondPartForm('signup-part2','signup-part3')">Siguiente</span>
         </div>
         <div class="box-buttons4">
-            <a href="?opcion=login">Ya tengo una cuenta</a>
+            <a href="login.php">Ya tengo una cuenta</a>
         </div>
     </article>
     <article class="target-SignUp invisible" id="signup-part3">
@@ -65,7 +65,7 @@
             <input type="submit" name="guardar" value="guardar" class="guardar"></input>
         </div>
         <div class="box-buttons4">
-            <a href="?opcion=login">Ya tengo una cuenta</a>
+            <a href="login.php">Ya tengo una cuenta</a>
         </div>
     </article>
 </section>

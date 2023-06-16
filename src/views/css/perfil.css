@@ -18,6 +18,7 @@ img {
     justify-content: space-around;
     background-color: var(--Blanco);
     border-radius: 10px;
+    text-align: center;
 }
 
 .box-perfil-intro section {
@@ -35,6 +36,12 @@ img {
 .box-perfil-intro section hr {
     width: 100%;
     height: 2px;
+}
+
+.box-perfil-intro h1 {
+    text-align: start;
+    padding: 2%;
+    font-size: 26px;
 }
 
 .box-image-perfil {

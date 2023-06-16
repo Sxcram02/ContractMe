@@ -1,7 +1,7 @@
 <?php
-require_once("layouts/header.php");
-error_reporting(E_ERROR | E_PARSE );
-session_start();
+    require_once("../views/layouts/header.php");
+    error_reporting(E_ERROR | E_PARSE );
+    session_start();
 ?>
 <title>mi perfil</title>
 <main id="GRP-homeAspirante">
@@ -9,7 +9,7 @@ session_start();
     <article class="container-presentacion-aspiarnte">
         <aside class="box-presentacion">
             <div class="box-imagen-perfil">
-                <a href="../../index.php"><i class='bx bx-user-circle' style="font-size: 46px; font-weight:400;"></i></a>
+                <a href="controller.inc.php"><i class='bx bx-user-circle' style="font-size: 46px; font-weight:400;"></i></a>
                 <h4><?php echo  $_SESSION['nombreUsuario']." ".$_SESSION['apellidos'] ?></h4>
                 <p><?php echo  $_SESSION['tipoUsuario'] ?></p>
             </div>
@@ -29,7 +29,7 @@ session_start();
     <acticle class="container-servicios-aspirante">
         <div class="box-content-servicios" id="box-content-servicios">
             <?php
-                include_once("viewPerfilAspirante.php");
+                include_once("../views/viewPerfilAspirante.php");
                 // require_once("viewFormCurriculum.php");
             ?>
         </div>

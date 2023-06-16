@@ -1,6 +1,6 @@
 <?php
-    require_once("layouts/header.php");
-    require_once("layouts/container.php");
+    require_once("../views/layouts/header.php");
+    require_once("../views/layouts/container.php");
 ?>
     <title>CME - pagina de inicio</title>
     <section id="homeUser">
@@ -16,5 +16,5 @@
         </article> 
     </section>
 <?php
-    require_once("services.php");
+    require_once("../views/services.php");
 ?>

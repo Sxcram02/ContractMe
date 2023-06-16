@@ -1,6 +1,6 @@
 <?php
-    require_once("layouts/header.php");
-    require_once("layouts/container.php");
+    require_once("../views/layouts/header.php");
+    require_once("../views/layouts/container.php");
     $curriculum = new Curriculum();
     $result = $curriculum -> getSelectCurriculums();
 ?>
@@ -19,4 +19,4 @@
     ?>
 </section>
 <?php
-    require_once("layouts/footer.php");
+    require_once("../views/layouts/footer.php");

@@ -1,6 +1,6 @@
 <?php
-    include_once("layouts/header.php");
-    include_once("layouts/container.php");
+    include_once("../views/layouts/header.php");
+    include_once("../views/layouts/container.php");
     error_reporting(E_PARSE | E_ERROR);
 ?>
 <title>CME - login</title>
@@ -8,7 +8,7 @@
     <aside></aside>
     <article class="target-logIn" id="box-content-target1">
         <div class="box-content-target" >
-            <form action="../controller/usuarioC.php?opcion=login" method="post" name="logIn" class="login">
+            <form action="" method="post" name="logIn" class="login">
                 <input type="email" name="userEmail" placeholder="Introduce tu email">
                 <input type="password" name="passwd" placeholder="Introduce la contraseña">
                 <input type="submit" name="iniciar" value="Iniciar" class="sentPostForm"></input>
